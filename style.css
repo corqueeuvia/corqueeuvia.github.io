@@ -70,8 +70,15 @@ a:hover {
     font-size: 45px;
     opacity: 0.3;
 
-    position: absolute;
-    align-self: flex-end;    
+    /* position: absolute;
+    align-self: flex-end; */
+    
+    animation-duration: 2s;
+}
+
+.scroll-link {
+        position: absolute;
+    align-self: flex-end;
 }
 
 #projects {
