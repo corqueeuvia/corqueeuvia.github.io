@@ -174,10 +174,10 @@ figure {
     height: 470px;
     border-radius: 1em;
     opacity: 0;
+    transition-duration: 1.5s;
 }
 
 .about-img:hover {
-    transition-duration: 1.5s;
     opacity: 1;
 }
 
