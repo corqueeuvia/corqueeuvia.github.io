@@ -57,7 +57,7 @@ a:visited {
     text-decoration: underline;
 }
 footer{
-    width: 405px;
+    width: 400px;
     height: 200px;
     display: flex;
     flex-wrap: wrap;
