@@ -5,7 +5,7 @@ font-family: 'Hind', sans-serif;
 font-family: 'Inconsolata', monospace;
 font-family: 'Karma', serif; >>> for title
 font-family: 'Voces', cursive;*/
-.column {width: 944px; margin: 0;}
+.column {width: 961px; margin: 0;}
 body{
     display: flex;
     margin: 0; 
