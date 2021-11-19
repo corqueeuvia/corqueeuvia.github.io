@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Hind:wght@300;400;500;600;700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Karma:wght@300;400;500;600;700&family=Voces&display=swap');
+
+/*font-family: 'Baloo 2', cursive;
+font-family: 'Hind', sans-serif;
+font-family: 'Inconsolata', monospace;
+font-family: 'Karma', serif; >>> for title
+font-family: 'Voces', cursive;*/
+.column {width: 944px; margin: 0;}
+body{
+    display: flex;
+    margin: 0; 
+    font-family: 'Hind', sans-serif;
+    font-size: large;
+}
+main{
+    margin: 0;
+    text-align: justify;
+    padding: 15px 60px 15px 60px;
+    background-color: #241623;
+    color: #B2FFA9;
+    
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px 15px 60px;
+    background-color: #BE6E46;
+    color: #241623;
+}
+h1, h2, h3, h4{
+    font-family: 'Karma', serif;
+    margin: 0;
+}
+p{
+    margin: 0;
+}
+a {
+    all: unset;
+    color: #BE6E46;
+}
+a:hover {
+    cursor: pointer;
+    color: #6153CC;
+    text-decoration: underline;
+}
+a:focus{
+    text-decoration: underline;
+    color: #BE6E46;
+}
+a:active {
+    background-color: #6153CC;
+    color: #241623;
+}
+a:visited {
+    color: #9999C3;
+    text-decoration: underline;
+}
+footer{
+    width: 405px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #B2FFA9;
+    color: #BE6E46;
+}

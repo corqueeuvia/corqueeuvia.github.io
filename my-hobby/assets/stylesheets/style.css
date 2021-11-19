@@ -1,0 +1,8 @@
+.profile-pic {
+    border-radius: 50%;
+    width: 200px;
+}
+
+#cat-gallery>img {
+    width: 135px;
+}
