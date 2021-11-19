@@ -58,7 +58,7 @@ a:visited {
 }
 footer{
     width: 405px;
-    height: 200px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     background-color: #B2FFA9;
