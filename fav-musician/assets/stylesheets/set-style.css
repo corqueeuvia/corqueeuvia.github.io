@@ -16,8 +16,8 @@ main{
     margin: 0;
     text-align: justify;
     padding: 15px 60px 15px 60px;
-    background-color: #241623;
-    color: #B2FFA9;
+    background-color: #333232;
+    color: #58BC82;
     
 }
 header{
@@ -25,8 +25,8 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 15px 60px 15px 60px;
-    background-color: #BE6E46;
-    color: #241623;
+    background-color: #E5446D;
+    color: #333232;
 }
 h1, h2, h3, h4{
     font-family: 'Karma', serif;
@@ -37,20 +37,20 @@ p{
 }
 a {
     all: unset;
-    color: #BE6E46;
+    color: #E5446D;
 }
 a:hover {
     cursor: pointer;
-    color: #6153CC;
+    color: #5C80BC;
     text-decoration: underline;
 }
 a:focus{
     text-decoration: underline;
-    color: #BE6E46;
+    color: #E5446D;
 }
 a:active {
-    background-color: #6153CC;
-    color: #241623;
+    background-color: #5C80BC;
+    color: #333232;
 }
 a:visited {
     color: #9999C3;
@@ -61,6 +61,6 @@ footer{
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    background-color: #B2FFA9;
-    color: #BE6E46;
+    background-color: #969ba5;
+    color: #E5446D;
 }
