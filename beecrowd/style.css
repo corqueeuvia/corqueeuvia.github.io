@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Catamaran:wght@400;800&family=Major+Mono+Display&display=swap');
+
+body {background-color: #14342B; margin: 0; color: #fefefe; width: 100%}
+
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: stretch; */
+    justify-content: space-evenly;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16pt;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 50pt;
+    letter-spacing: 4pt; 
+    text-align: center; 
+    color:#91ff37;
+    text-shadow: 1pt 1pt 4pt #91ff37;
+}
+
+h2 {font-family: 'Major Mono Display', monospace; font-size: 22pt; color:#91ff37;}
+
+.challenge-box {
+    width: 550px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: #ffffff15;
+    margin: 15px 0 25px 0;
+    padding-bottom: 10px;
+}
+
+.chall-txt {
+    width: 90%;
+    text-align: justify;
+}
+
+.input-fields {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.input-fields > input {
+    margin: 10px 0 10px 0;
+}
+
+.input-fields > button {
+    margin: 15px 0 15px 0;
+}
+
+input {
+    width: 40%;
+    height: 22pt;
+
+    border-radius: 5px;
+    outline: none;
+    border: none;
+
+    font-family: inherit;
+    font-size: 15pt;
+    padding: 5px;
+
+    background-color: #00000030;
+    color: lawngreen;
+}
+
+input:focus {
+    border: 2px solid #fb8b24;
+}
+
+input::placeholder {color: #fb8b24}
+
+button {
+    all: unset;
+    border-radius: 5px;
+    height: 22pt;
+    background-color: #91ff37;
+    color: #1e1e1e;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 5px solid #509902;
+    transition: all 0.1s;
+}
+
+button:hover, button:active {
+    cursor: pointer;
+    transform: translate(0px,5px);
+    border-bottom: 1px solid #60bb04;
+}
+
+button:focus {
+    border: 4px solid #14342B;
+    color: #14342B
+}
+
+button, #total-income {
+    width: 87%;
+    height: 22pt;
+    text-align: center;
+}
+
+#percentual-bonus {
+    width: 20%;
+}
+
+#month-sale {
+    width: 60%;
+}
+
+/* challenge 1010 */
+
+.product-code, .product-amount {
+    width: 15%;
+}
+
+.product-price {
+    width: 55%;
+}
+
+#total-price, #total-price-btn {
+    width: 93%;
+    text-align: center;
+}
+/* challenge 1011 */
+
+#sphere-volume {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1012 */
+
+.abc-input {
+    width: 20%;
+}
+
+.abc-output, #abc-btn {
+    width: 95%;
+    text-align: center;
+}
+
+/* challenge 1013 */
+
+#greatestOutput {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1014 */
+
+#km-input, #l-input {
+    width: 30%;
+}
+
+#consumption-output {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1015 */
+
+#chall-1015 > .input-fields > label {
+    width: 90%;
+}
+
+#distance-output {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1016 */
+
+#chall-1016 > .input-fields > input {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1017 */
+
+#fuelSpent {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1018 */
+
+#chall-1018 > .input-fields > input {
+    width: 80%;
+    text-align: center;
+}
+#chall-1018 > .input-fields > button {
+    width: 30%;
+}
+
+/* challenge 1019 */
+
+#chall-1019 > .input-fields > input, button {
+    width: 70%;
+    text-align: center;
+}
+
+/* challenge 1020 */
+
+#chall-1020 > .input-fields > input, button {
+    width: 95%;
+    text-align: center;
+}
+
+/* challenge 1021 */
+
+#chall-1021 {
+    width: 88%;
+}
+
+#user-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+#user-menu > button {
+    width: 10%;
+    height: 20px;
+}
+
+#user-output {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
+    padding-bottom: 15px;
+}
+
+#user-output > button {
+    width: 50%;
+}
+
+#bills-out > input, #coins-out > input {
+    width: 88%;
+    margin-bottom: 20px;
+}
+
+#bills-out, #coins-out {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}

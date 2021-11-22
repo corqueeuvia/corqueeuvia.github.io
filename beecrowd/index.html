@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1366, initial-scale=1.0">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <title>Lessa</title>
+</head>
+<body>
+    <header>
+        <h1>LESSA SQUAD JS TRAINING</h1>
+    </header>
+    <main>
+        <!-- challenge 1009 -->
+        <section class="challenge-box" id="chall-1009">
+
+            <header class="chall-txt">
+                <h2>Chall.#1009</h2>
+                <h3>Salary with bonus</h3>
+                <p>Know your income based on a fixed salary plus a percentual bonus over your monthly sales.</p>
+            </header>
+
+            <div class="input-fields">
+                <input name="name" type="text" id="employees-name" placeholder="Your name">
+
+                <input name="salary" type="number" id="fixed-salary" placeholder="Fixed salary">
+
+                <input name="bonus" type="number" id="percentual-bonus" placeholder="% bonus">
+
+                <input name="sale" type="number" id="month-sale" placeholder="This month's sale">
+
+                <button onClick=calculateIncome()>See income!</button>
+                
+                <input name="output" type="text" id="total-income" placeholder="Your income will show here">
+            </div>
+
+            <script>                
+                function calculateIncome() {
+                    let name = document.getElementById('employees-name').value;
+                    let salary = parseFloat(document.getElementById('fixed-salary').value);
+                    let percentual = parseFloat(document.getElementById('percentual-bonus').value)/100;
+                    let bonus = parseFloat(document.getElementById('month-sale').value) * percentual;
+                    let income = salary + bonus;
+        
+                    let output = document.getElementById('total-income');
+                    output.value = name + ", your income is $" + income.toFixed(2) + " this month.";
+
+                    clearSalaryInput();
+                }
+                function clearSalaryInput() {
+                    let name = document.getElementById('employees-name');
+                    name.value = null;
+                    let salary = document.getElementById('fixed-salary');
+                    salary.value = null;
+                    let percentual = document.getElementById('percentual-bonus');
+                    percentual.value = null;
+                    let sale = document.getElementById('month-sale');
+                    sale.value = null;
+                }
+            </script>
+        </section>
+
+        <!-- challenge 1010 -->
+        <section class="challenge-box" id="chall-1010">
+            <section class="chall-txt">
+                <h2>Chall.#1010</h2>
+                <h3>Simple calculate</h3>
+                <p>Know how much to pay for 2 products after inserting their code number, amount taken and price per unit.</p>
+            </section>
+
+            <section class="input-fields">
+                <input class="product-code" type="number" id="product-1-code" placeholder="Code">
+                <input class="product-amount" type="number" id="product-1-amount" placeholder="Amt.">
+                <input class="product-price" type="number" id="product-1-price" placeholder="Price per unit">
+
+                <input class="product-code" type="number" id="product-2-code" placeholder="Code">
+                <input class="product-amount" type="number" id="product-2-amount" placeholder="Amt.">
+                <input class="product-price" type="number" id="product-2-price" placeholder="Price per unit">
+
+                <button onclick=calculateTotalPrice() id="total-price-btn">Total price</button>
+
+                <input name="total-price" type="text" id="total-price" placeholder="Total to pay will show here">
+            </section>
+
+            <script>
+                function calculateTotalPrice() {
+                    let amountOne = parseInt(document.getElementById("product-1-amount").value);
+                    let priceOne = parseFloat(document.getElementById("product-1-price").value) * amountOne;
+        
+                    let amountTwo = parseInt(document.getElementById("product-2-amount").value);
+                    let priceTwo = parseFloat(document.getElementById("product-2-price").value) * amountTwo;
+        
+                    let totalPrice = priceOne + priceTwo;
+        
+                    let output = document.getElementById("total-price");
+                    output.value = "You must pay $" + totalPrice.toFixed(2) + " for the items.";
+
+                    clearProductsInput();
+                }
+                function clearProductsInput() {
+                    let c1 = document.getElementById("product-1-code");
+                    c1.value = null;
+                    let a1 = document.getElementById("product-1-amount");
+                    a1.value = null;
+                    let p1 = document.getElementById("product-1-price");
+                    p1.value = null;
+
+                    let c2 = document.getElementById("product-2-code");
+                    c2.value = null;
+                    let a2 = document.getElementById("product-2-amount");
+                    a2.value = null;
+                    let p2 = document.getElementById("product-2-price");
+                    p2.value = null;
+                }
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1011">
+            <section class="chall-txt">
+                <h2>Chall.#1011</h2>
+                <h3>Sphere</h3>
+                <p>Calculate a sphere's volume given its radius. Assign for pi the value 3.14159.</p>
+            </section>
+            <section class="input-fields">
+                <label>Insert sphere's radius: </label>
+                <input type="number" id="sphere-radius">
+
+                <button onclick=calculateSphereVolume() id="calculate-radius">Show volume</button>
+
+                <input type="text" placeholder="Sphere's volume will show here" id="sphere-volume">
+
+                <script>
+                    function calculateSphereVolume() {
+                        let sphereRadius = parseFloat(document.getElementById("sphere-radius").value);
+                        let pi = 3.14159;
+                        let sphereVolume = 4.0/3 * pi * Math.pow(sphereRadius, 3);
+
+                        let output = document.getElementById("sphere-volume");
+                        output.value = "The volume of a sphere of radius " + sphereRadius + " is " + sphereVolume.toFixed(3);
+
+                        clearInput();
+                    }
+
+                    function clearInput() {
+                        let input = document.getElementById("sphere-radius");
+                        input.value = null;
+                    }
+                </script>
+            </section>
+        </section>
+        <section class="challenge-box" id="chall-1012">
+            <section class="chall-txt">
+                <h2>Chall.#1012</h2>
+                <h3>Area</h3>
+                <p>Given the values A, B and C, you'll get:</p>
+                <ol>
+                    <li>the area of the rectangled triangle that has base A and height C;</li>
+                    <li>the area of the radius's circle C. (pi = 3.14159);</li>
+                    <li>the area of the trapezium which has A and B by base, and C by height;</li>
+                    <li>the area of ​​the square that has side B &</li>
+                    <li>the area of the rectangle that has sides A and B.</li>
+                </ol>      
+            </section>
+            <section class="input-fields">
+                <label>A = </label>
+                <input type="number" class="abc-input" id="input-a">
+                <label>B = </label>
+                <input type="number" class="abc-input" id="input-b">
+                <label>C = </label>
+                <input type="number" class="abc-input" id="input-c">
+
+                <button onclick=calculateAllAreas() id="abc-btn">3, 2, 1 GO!</button>
+
+                <input type="text" placeholder="The rectangled triangle's area will show here" class="abc-output" id="rect-tri-output">
+                <input type="text" placeholder="The circle's area will show here" class="abc-output" id="circle-output">
+                <input type="text" placeholder="The trapezium's area will show here" class="abc-output" id="trapezium-output">
+                <input type="text" placeholder="The square's area will show here" class="abc-output" id="square-output">
+                <input type="text" placeholder="The rectangle's area will show here" class="abc-output" id="rectangle-output">
+            </section>
+            
+            <script>
+                
+                function calculateAllAreas() {
+                    let A = parseFloat(document.getElementById("input-a").value);
+                    let B = parseFloat(document.getElementById("input-b").value);
+                    let C = parseFloat(document.getElementById("input-c").value);
+                    let pi = 3.14159;
+
+                    let rectTriArea = (A * C) / 2;
+                    let rectTriOutput = document.getElementById("rect-tri-output");
+                    rectTriOutput.value = "The base " + A + " height " + C + " rectangled triangle's area is " + rectTriArea.toFixed(3);
+
+                    let circleArea = pi * Math.pow(C, 2)
+                    let circleOutput = document.getElementById("circle-output");
+                    circleOutput.value = "The radius " + C + " circle's area is " + circleArea.toFixed(3);
+
+                    let trapeziumArea = (A + B) * C / 2;
+                    let trapeziumOutput = document.getElementById("trapezium-output");
+                    trapeziumOutput.value = "The bases " + A + " and " + B + " and height " + C + " trapezium's area is " + trapeziumArea.toFixed(3);
+
+                    let squareArea = B * B;
+                    let squareOutput = document.getElementById("square-output");
+                    squareOutput.value = "The side " + B + " square's area is " + squareArea.toFixed(3);
+
+                    let rectangleArea = A * B;
+                    let rectangleOutput = document.getElementById("rectangle-output");
+                    rectangleOutput.value = "The sides " + A + " and " + B + " rectangle's area is " + rectangleArea.toFixed(3);
+
+                    clearAbcInput();
+                }
+                function clearAbcInput() {
+                    let fA = document.getElementById("input-a");
+                    fA.value = null;
+                    let fB = document.getElementById("input-b");
+                    fB.value = null;
+                    let fC = document.getElementById("input-c");
+                    fC.value = null;
+                }
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1013">
+            <section class="chall-txt">
+                <h2>Chall.#1013</h2>
+                <h3>The greatest</h3>
+                <p>It calculates the greatest among 3 integer numbers.</p>
+            </section>
+            <section class="input-fields">
+                <label>1st # </label>
+                <input type="number" class="abc-input" id="input-1">
+                <label>2nd # </label>
+                <input type="number" class="abc-input" id="input-2">
+                <label>3rd # </label>
+                <input type="number" class="abc-input" id="input-3">
+
+                <button onclick=showGreatest()>Show the greatest</button>
+
+                <input id="greatestOutput" placeholder="Only the greatest shall appear!">
+            </section>
+            <script>
+                function showGreatest() {
+                    let a = parseInt(document.getElementById("input-1").value);
+                    let b = parseInt(document.getElementById("input-2").value);
+                    let c = parseInt(document.getElementById("input-3").value);
+
+                    let greatestAB = (a + b + Math.abs(a - b))/2;
+                    let greatestXC = (greatestAB + c + Math.abs(greatestAB - c))/2;
+
+                    let greatestOutput = document.getElementById("greatestOutput");
+                    greatestOutput.value = greatestXC;
+
+                    clearGreatInput();
+                }
+                function clearGreatInput() {
+                    let ga = document.getElementById("input-1");
+                    ga.value = null;
+                    let gb = document.getElementById("input-2");
+                    gb.value = null;
+                    let gc = document.getElementById("input-3");
+                    gc.value = null;
+                }
+            </script>
+        </section>
+        <section class="challenge-box" id="chall-1014">
+            <section class="chall-txt">
+                <h2>Chall.#1014</h2>
+                <h3>Consumption</h3>
+                <p>Given a car's trip total distance (in Km) and how much fuel (in L) was needed for it, check said car's consuption of liters per kilometer.</p>
+            </section>
+            <section class="input-fields">
+                <input type="number" id="km-input"><label>Km</label>
+                <input type="number" id="l-input"><label>L</label>
+
+                <button onclick=giveCarConsumption()>Show consumption</button>
+
+                <input type="text" id="consumption-output" placeholder="Car consumption will show here">
+
+            </section>
+            <script>
+                function giveCarConsumption() {
+                    let distance = parseInt(document.getElementById("km-input").value);
+                    let liters = parseFloat(document.getElementById("l-input").value);
+                    let consumption = distance/liters.toFixed(1);
+
+                    let output = document.getElementById("consumption-output");
+                    output.value = "The car runs and average of " + consumption.toFixed(3) + "Km/L."
+
+                    clearConsumptionInput();
+                }
+                function clearConsumptionInput() {
+                    let iKm = document.getElementById("km-input");
+                    iKm.value = null;
+                    let iL = document.getElementById("l-input");
+                    iL.value = null;
+                }
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1015">
+            <section class="chall-txt">
+                <h2>Chall.#1015</h2>
+                <h3>Distance Between Two Points</h3>
+                <p>Given four values corresponding to the x and y axes of two points in the plane, p1 (x1, y1) and p2 (x2, y2), see the distance between them.</p>
+            </section>
+            <section class="input-fields">
+                <label>Point 1's coordinates:</label>
+                <input type="number" id="x1-input" placeholder="Type the X value here">
+                <input type="number" id="y1-input" placeholder="Type the Y value here">
+
+                <label>Point 2's coordinates:</label>
+                <input type="number" id="x2-input" placeholder="Type the X value here">
+                <input type="number" id="y2-input" placeholder="Type the Y value here">
+
+                <button onclick=calculateDistance()>Calculate distance</button>
+
+                <input id="distance-output" placeholder="The distance between them will show here">
+
+            </section>
+            <script>
+                function calculateDistance() {
+                    let x1 = (parseFloat(document.getElementById("x1-input").value)).toFixed(1);
+                    let y1 = (parseFloat(document.getElementById("y1-input").value)).toFixed(1);
+                    let x2 = (parseFloat(document.getElementById("x2-input").value)).toFixed(1);
+                    let y2 = (parseFloat(document.getElementById("y2-input").value)).toFixed(1);
+                                       
+                    let distance = Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+
+                    let distOutput = document.getElementById("distance-output");
+                    distOutput.value = "The distance between these two points is " + distance.toFixed(4);
+
+                    clearDistanceInput();
+                }
+
+                function clearDistanceInput() {
+                    let ix1 = document.getElementById("x1-input");
+                    ix1.value = null;
+                    let iy1 = document.getElementById("y1-input");
+                    iy1.value = null;
+                    let ix2 = document.getElementById("x2-input");
+                    ix2.value = null;
+                    let iy2 = document.getElementById("y2-input");
+                    iy2.value = null;                    
+                }
+
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1016">
+            <section class="chall-txt">
+                <h2>Chall.#1016</h2>
+                <h3>Distance</h3>
+                <p>A Beetle at 90Km/h is running away from a Camaro after a silly traffic argument. The Camaro can't go over 60Km/h because it's taking Bingo, the family pet, back from the vet. Give a distance (in Km) to see how long it takes the Beetle to be that far ahead of the Camaro.</p>
+            </section>
+
+            <section class="input-fields">
+                <input type="number" id="cars-dist-input" placeholder="How far apart do you want them to be?">
+                
+                <button onclick=calculateTime()>Run, Forest, RUN!</button>
+
+                <input type="text" id="cars-dist-output" placeholder="The time needed will show here">
+
+            </section>
+            <script>
+                function calculateTime() {
+                    let distance = parseInt(document.getElementById("cars-dist-input").value);
+                    let time = distance * 2;
+
+                    let output = document.getElementById("cars-dist-output");
+                    output.value = "It will take the Beetle " + time + " minutes to be " + distance + "Km ahead.";
+
+                    clearCarDistInput();
+                }
+                function clearCarDistInput() {
+                    let input = document.getElementById("cars-dist-input");
+                    input.value = null;
+                }
+
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1017">
+            <section class="chall-txt">
+                <h2>Chall.#1017</h2>
+                <h3>Fuel Spent</h3>
+                <p>Give the trip duration in hours, the average speed in Km/h and see how much fuel a car that runs 12Km/L spent to take such trip.</p>
+            </section>
+            <section class="input-fields">
+                <label>Trip duration (h)</label><input type="number" id="trip-duration">
+                <label>Average speed (Km/h)</label><input type="number" id="average-speed">
+
+                <button onclick=calculateFuelSpent()>See fuel spent</button>
+
+                <input id="fuelSpent" type="text" placeholder="The fuel spent will show here">
+
+            </section>
+            <script>
+                function calculateFuelSpent() {
+                    let tripDuration = parseInt(document.getElementById("trip-duration").value);
+                    let averageSpeed = parseFloat(document.getElementById("average-speed").value);
+                    let tripDistance = averageSpeed * tripDuration;
+
+                    let fuelSpent = tripDistance / 12;
+                    let fuelOutput = document.getElementById("fuelSpent");
+                    fuelOutput.value = "This trip spent " + fuelSpent.toFixed(3) + "L";
+
+                    clearTripInput();
+                }
+                function clearTripInput() {
+                    let duration = document.getElementById("trip-duration");
+                    duration.value = null;
+                    let speed = document.getElementById("average-speed");
+                    speed.value = null;
+                }
+
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1018">
+            <section class="chall-txt">
+                <h2>Chall.#1018</h2>
+                <h3>Banknotes</h3>
+                <p>Learn the smallest amount of bank notes possible to sum the inserted value.</p>
+            </section>
+            <section class="input-fields">
+                <label>The sum you want is R$</label>
+                <input type="number" id="amount-wanted">
+                <button onclick=clearAmountWanted() id="banknote-clear-btn">CLEAR</button>
+                <button onClick=calculateNoteAmt()>Show notes</button>
+                <input type="text" id="output-100">
+                <input type="text" id="output-50">
+                <input type="text" id="output-20">
+                <input type="text" id="output-10">
+                <input type="text" id="output-5">
+                <input type="text" id="output-2">
+                <input type="text" id="output-1">
+                <button id="clear-notes-result-btn" onclick=clearNotesResult()>CLEAR ALL</button>
+            </section>
+            <script>
+                function calculateNoteAmt() {
+                    let amountWanted = parseInt(document.getElementById("amount-wanted").value);
+                    
+                    let note100 = parseInt(amountWanted / 100);
+                    let remainder = amountWanted % 100;              
+                    if (note100 == 0) {
+                        let amt100 = document.getElementById("output-100");
+                        amt100.value = "No 100$ bill";
+                    } else {
+                        let amt100 = document.getElementById("output-100");
+                        amt100.value = note100 + "x the 100$ bill";
+                    }
+
+                    let note50 = parseInt(remainder / 50);
+                    remainder = remainder % 50;
+                    if (note50 == 0) {
+                        let amt50 = document.getElementById("output-50");
+                        amt50.value = "No 50$ bill";
+                    } else {
+                        let amt50 = document.getElementById("output-50");
+                        amt50.value = note50 + "x the 50$ bill";
+                    }
+
+                    let note20 = parseInt(remainder / 20);
+                    remainder = remainder % 20;
+                    let amt20 = document.getElementById("output-20");
+                    if (note20 == 0 ) {
+                        amt20.value = "No 20$ bill";
+                    } else {amt20.value = note20 + "x the 20$ bill";
+
+                    }
+
+                    let note10 = parseInt(remainder / 10);
+                    remainder = remainder % 10;
+                    let amt10 = document.getElementById("output-10");
+                    if (note10 == 0 ) {
+                        amt10.value = "No 10$ bill";
+                    } else {
+                        amt10.value = note10 + "x the 10$ bill";
+                    }
+
+                    let note5 = parseInt(remainder / 5);
+                    remainder = remainder % 5;
+                    let amt5 = document.getElementById("output-5");
+                    if (note5 == 0 ) {
+                        amt5.value = "No 5$ bill";
+                    } else {
+                        amt5.value = note5 + "x the 5$ bill";
+                    }
+
+                    let note2 = parseInt(remainder / 2);
+                    remainder = remainder % 2;
+                    let amt2 = document.getElementById("output-2");
+                    if (note2 == 0 ) {
+                        amt2.value = "No 2$ bill";
+                    } else {
+                        amt2.value = note2 + "x the 2$ bill";
+                    }
+                    
+                    let note1 = parseInt(remainder / 1);
+                    let amt1 = document.getElementById("output-1");
+                    if (note1 == 0 ) {
+                        amt1.value = "No 1$ bill";
+                    } else {
+                        amt1.value = note1 + "x the 1$ bill";
+                    }
+                    clearAmountWanted()
+                }
+
+                function clearAmountWanted() {
+                    let input = document.getElementById("amount-wanted");
+                    input.value = null;
+                }
+
+                function clearNotesResult() {
+                    let amt1 = document.getElementById("output-1");
+                    amt1.value = null;
+                    let amt2 = document.getElementById("output-2");
+                    amt2.value = null;
+                    let amt5 = document.getElementById("output-5");
+                    amt5.value = null;
+                    let amt10 = document.getElementById("output-10");
+                    amt10.value = null;
+                    let amt20 = document.getElementById("output-20");
+                    amt20.value = null;
+                    let amt50 = document.getElementById("output-50");
+                    amt50.value = null;
+                    let amt100 = document.getElementById("output-100");
+                    amt100.value = null;
+                }
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1019">
+            <section class="chall-txt">
+                <h2>Chall.#1019</h2>
+                <h3>Time Conversion</h3>
+                <p>Convert a big number of seconds to hours : minutes : seconds. Hurry, the clock is ticking!</p>
+            </section>
+            <section class="input-fields">
+                <input type="number" id="seconds-input" placeholder="Give me a BIG amount of seconds, baby">
+                <button onclick=convertTime()>GO!</button>
+                <input type="text" id="final-time" placeholder="When time is right it'll show here">
+            </section>
+            <script>
+                function convertTime() {
+                    let bigSeconds = parseInt(document.getElementById("seconds-input").value);
+                    let finalSec = bigSeconds % 60;
+                    let minute = parseInt(bigSeconds / 60);
+                    if (minute > 60) {
+                        let finalHour = parseInt(minute / 60);
+                        let finalMinute = minute % 60;
+
+                        let finalTime = document.getElementById("final-time");
+                        finalTime.value = finalHour + ":" + finalMinute + ":" + finalSec;
+                    } else {
+                        let finalTime = document.getElementById("final-time");
+                        finalTime.value = 0 + ":" + minute + ":" + finalSec;
+                    }
+                }
+
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1020">
+            <section class="chall-txt">
+                <h2>Chall.#1020</h2>
+                <h3>Age in Days</h3>
+                <p>Tell me a reeeeeally big amount of days to turn into years, months and days.</p>
+            </section>
+            <section class="input-fields">
+                <input type="number" id="day-amt-input" placeholder="Insert amount of days">
+                <button onclick=convertDays()>Convert</button>
+                <input type="text" id="day-amt-output" placeholder="Result will show here">
+            </section>
+            <script>
+                function convertDays() {
+                    let bigDays = parseInt(document.getElementById("day-amt-input").value);
+                    let finalYear = parseInt(bigDays / 365);
+
+                    let days = bigDays % 365;
+
+                    if (days >= 30) {
+                        finalDays = days % 30;
+                        finalMonths = parseInt(days / 30);
+                        let finalDate = document.getElementById("day-amt-output");
+                        finalDate.value = bigDays + " days = " + finalYear + " year(s), " + finalMonths + " month(s) " + finalDays + " day(s).";
+                    } else {
+                        let finalDate = document.getElementById("day-amt-output");
+                        finalDate.value = bigDays + " days = " + finalYear + " year(s), " + 0 + " month(s) " + days + " day(s).";
+                    }
+                }
+
+            </script>
+        </section>
+
+        <section class="challenge-box" id="chall-1021">
+            <section class="chall-txt">
+                <h2>Chall.#1021</h2>
+                <h3>Bills and coins</h3>
+                <p>Learn the minimal amount of Brazilian bills and coins you need to get the specified sum. Just type in a sum!</p>
+            </section>
+            <section class="input-fields">
+                <div id="user-menu">
+                    <label>How much? (R$)</label>
+                    <input type="number" id="bill-coin-amt">
+                    <button onclick=clearTotalSum() id="bill-coin-clear-btn">CLEAR</button>
+                    <button onclick=calculateBillCoinAmt()>GO!</button>
+                </div>
+                <div id="user-output">
+                    <section id="bills-out">
+                        <p>Bills:</p>
+                        <input type="text" id="out-100">
+                        <input type="text" id="out-50">
+                        <input type="text" id="out-20">
+                        <input type="text" id="out-10">
+                        <input type="text" id="out-5">
+                    <input type="text" id="out-2">
+                    </section>
+                    <section id="coins-out">
+                        <p>Coins:</p>
+                        <input type="text" id="out-1">
+                        <input type="text" id="out-050">
+                        <input type="text" id="out-025">
+                        <input type="text" id="out-010">
+                        <input type="text" id="out-05">
+                        <input type="text" id="out-01">
+                    </section>
+                    <button id="clear-bill-coin-result-btn" onclick=clearBillCoinResult()>CLEAR ALL</button>
+                </div>
+            </section>
+            <script>
+                function calculateBillCoinAmt() {
+                    let totalSum = parseFloat(document.getElementById("bill-coin-amt").value);
+                    
+                    let note100 = parseInt(totalSum / 100);
+                    let remainder = totalSum % 100;
+                    if (note100 == 0) {
+                        let amt100 = document.getElementById("out-100");
+                        amt100.value = "No 100$ bill";
+                    } else {
+                        let amt100 = document.getElementById("out-100");
+                        amt100.value = note100 + "x the 100$ bill";
+                    }
+
+                    let note50 = parseInt(remainder / 50);
+                    remainder = remainder % 50;
+                    if (note50 == 0) {
+                        let amt50 = document.getElementById("out-50");
+                        amt50.value = "No 50$ bill";
+                    } else {
+                        let amt50 = document.getElementById("out-50");
+                        amt50.value = note50 + "x the 50$ bill";
+                    }
+
+                    let note20 = parseInt(remainder / 20);
+                    remainder = remainder % 20;
+                    let amt20 = document.getElementById("out-20");
+                    if (note20 == 0 ) {
+                        amt20.value = "No 20$ bill";
+                    } else {amt20.value = note20 + "x the 20$ bill";
+
+                    }
+
+                    let note10 = parseInt(remainder / 10);
+                    remainder = remainder % 10;
+                    let amt10 = document.getElementById("out-10");
+                    if (note10 == 0 ) {
+                        amt10.value = "No 10$ bill";
+                    } else {
+                        amt10.value = note10 + "x the 10$ bill";
+                    }
+
+                    let note5 = parseInt(remainder / 5);
+                    remainder = remainder % 5;
+                    let amt5 = document.getElementById("out-5");
+                    if (note5 == 0 ) {
+                        amt5.value = "No 5$ bill";
+                    } else {
+                        amt5.value = note5 + "x the 5$ bill";
+                    }
+
+                    let note2 = parseInt(remainder / 2);
+                    remainder = remainder % 2;
+                    let amt2 = document.getElementById("out-2");
+                    if (note2 == 0 ) {
+                        amt2.value = "No 2$ bill";
+                    } else {
+                        amt2.value = note2 + "x the 2$ bill";
+                    }
+
+                    //coins ~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    
+                    let coin1 = remainder / 1;
+                    remainder = parseFloat(remainder % 1);
+                    let amt1 = document.getElementById("out-1");
+                    if (parseInt(coin1) == 0 ) {
+                        amt1.value = "No 1$ coin";
+                    } else {
+                        amt1.value = parseInt(coin1) + "x the 1$ coin";
+                    }
+
+                    let coin50 = remainder / 0.5;
+                    remainder = parseFloat(remainder % 0.5);
+                    let amt050 = document.getElementById("out-050");
+                    if (parseInt(coin50) == 0) {
+                        amt050.value = "No $0.50 coin";
+                    } else {
+                        amt050.value = parseInt(coin50) + "x the $0.50 coin";
+                    }
+
+                    let coin25 = remainder / 0.25;
+                    remainder = parseFloat(remainder % 0.25);
+                    let amt025 = document.getElementById("out-025");
+                    if (parseInt(coin25) == 0) {
+                        amt025.value = "No $0.25 coin";
+                    } else {
+                        amt025.value = parseInt(coin25) + "x the $0.25 coin";
+                    }
+
+                    let coin10 = remainder / 0.1;
+                    remainder = parseFloat(remainder % 0.1);
+                    let amt010 = document.getElementById("out-010");
+                    if (parseInt(coin10) == 0) {
+                        amt010.value = "No $0.10 coin";
+                    } else {
+                        amt010.value = parseInt(coin10) + "x the $0.10 coin";
+                    }
+
+                    let coin5 = remainder / 0.05;
+                    remainder = parseFloat(remainder % 0.05);
+                    let amt05 = document.getElementById("out-05");
+                    if (parseInt(coin5) == 0) {
+                        amt05.value = "No $0.05 coin";
+                    } else {
+                        amt05.value = parseInt(coin5) + "x the $0.05 coin";
+                    }
+
+                    let coin01 = remainder / 0.01;
+                    remainder = parseFloat(remainder % 0.01);
+                    let amt01 = document.getElementById("out-01");
+                    if (parseInt(coin01) == 0) {
+                        amt01.value = "No $0.01 coin";
+                    } else {
+                        amt01.value = parseInt(coin01) + "x the $0.01 coin. Would you take it in candy? (:";
+                    }
+
+                    clearTotalSum();
+                }
+
+                function clearTotalSum() {
+                    let input = document.getElementById("bill-coin-amt");
+                    input.value = null;
+                }
+
+                function clearBillCoinResult() {
+                    let amt1 = document.getElementById("out-1");
+                    amt1.value = null;
+                    let amt2 = document.getElementById("out-2");
+                    amt2.value = null;
+                    let amt5 = document.getElementById("out-5");
+                    amt5.value = null;
+                    let amt10 = document.getElementById("out-10");
+                    amt10.value = null;
+                    let amt20 = document.getElementById("out-20");
+                    amt20.value = null;
+                    let amt50 = document.getElementById("out-50");
+                    amt50.value = null;
+                    let amt100 = document.getElementById("out-100");
+                    amt100.value = null;
+                    let amt01 = document.getElementById("out-01");
+                    amt01.value = null;
+                    let amt05 = document.getElementById("out-05");
+                    amt05.value = null;
+                    let amt010 = document.getElementById("out-010");
+                    amt010.value = null;
+                    let amt025 = document.getElementById("out-025");
+                    amt025.value = null;
+                    let amt050 = document.getElementById("out-050");
+                    amt050.value = null;
+                }
+            </script>
+        </section>
+
+        <section class="challenge-box">
+            <header class="chall-txt">
+                <h2>Chall.#XXXX</h2>
+                <h3>Months of the year</h3>
+                <p>Returns the proper month according to the number input.</p>
+            </header>
+            <div class="input-fields">
+                <label for="number">A number from 1 to 12:</label>
+                <input id="number" type="number">
+                <button onclick=showMonth()>Show me!</button>
+                <label for="month-result">Result:</label>
+                <input id="month-result" type="text">
+            </div>
+            <script>
+                function showMonth() {
+                    let monthNum = parseInt(document.getElementById("number").value);
+                    let monthRes = document.getElementById("month-result");
+                    if (monthNum == 1) {
+                        monthRes.value = "Month #" + monthNum + " is January"; 
+                    } else if (monthNum == 2) {
+                        monthRes.value = "Month #" + monthNum + " is February"; 
+                    } else if (monthNum == 3) {
+                        monthRes.value = "Month #" + monthNum + " is March"; 
+                    } else if (monthNum == 4) {
+                        monthRes.value = "Month #" + monthNum + " is April"; 
+                    } else if (monthNum == 5) {
+                        monthRes.value = "Month #" + monthNum + " is May"; 
+                    } else if (monthNum == 6) {
+                        monthRes.value = "Month #" + monthNum + " is June"; 
+                    } else if (monthNum == 7) {
+                        monthRes.value = "Month #" + monthNum + " is July"; 
+                    } else if (monthNum == 8) {
+                        monthRes.value = "Month #" + monthNum + " is August"; 
+                    } else if (monthNum == 9) {
+                        monthRes.value = "Month #" + monthNum + " is September"; 
+                    } else if (monthNum == 10) {
+                        monthRes.value = "Month #" + monthNum + " is October"; 
+                    } else if (monthNum == 11) {
+                        monthRes.value = "Month #" + monthNum + " is November"; 
+                    } else if (monthNum == 12) {
+                        monthRes.value = "Month #" + monthNum + " is December"; 
+                    } else {
+                        monthRes.value = "Hey! We have 12 months, pick a number from 1 to 12."
+                    }
+
+                }
+            </script>
+        </section>
+    </main> 
+</body>
+</html>
