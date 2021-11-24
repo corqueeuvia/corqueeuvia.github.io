@@ -1,9 +1,4 @@
-// function createDiv(idName, className, parent) {
-//     let div = document.createElement("div");
-//     div.setAttribute("id", idName);
-//     div.setAttribute("class", className);
-//     document.querySelector(parent).appendChild(div);
-// }
+//function declarations
 
 function create(element, idName, className, parent) {
     let el = document.createElement(element);
@@ -53,11 +48,4 @@ addContent("li:nth-child(3)", "there can be DOTTED ZEBRAS! yeah, check <a href='
 create("footer", "cat-gallery", "", "body");
 
 //create footer content
-let gridContent = '';
-
-for (let i = 3; i <= 4; i++) {
-    let gridItem = '<img src="assets/images/zebra' + i + '.jpg">';
-    gridContent = gridContent + gridItem;
-}
-
 addContent("#cat-gallery", "<img src='assets/images/zebra3.jpg'><img src='assets/images/zebra4.jpg'>");
