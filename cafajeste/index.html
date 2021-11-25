@@ -25,7 +25,7 @@
             <div class="two-column">
                 <form>
                     <label>seu nome</label>
-                    <input type="text" class="input" id="customers-name">
+                    <input type="text" class="input" id="customers-name" autofocus minlenght="3" maxlength="10" placeholder="de 3 a 10 caracteres" required>
         
                     <label>dia da visita</label>
                     <input type="date" class="input" id="visit-date">
@@ -37,7 +37,7 @@
                     </div>
     
                     <label>comentários</label>
-                    <textarea id="customers-comment" class="input-txt" rows="5" cols="25" maxlength="280"></textarea>
+                    <textarea id="customers-comment" class="input-txt" rows="5" cols="25" maxlength="280" placeholder="de 10 a 500 caracteres" minlenght="10" required></textarea>
     
                     <button type="button" onclick=displayFeedback() id="submit-btn">ENVIAR</button>    
                     
