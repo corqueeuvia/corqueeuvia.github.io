@@ -13,30 +13,32 @@ function displayFeedback() {
     
     create("div", "add-feedback", "feedback-container", ".customers-feedback");
     
-    let name = document.getElementById("customers-name").value;
-    create("h3", "cust-name", "cust-name", ".feedback-container");
-    addContent("#cust-name", name + ' ');
+    let clientName = document.getElementById("customers-name").value;
+    create("h3", "cust-name", "cust-name golden", ".feedback-container");
 
     if (like) {
-        create("i", "like-solid", "bx bxs-like", "#cust-name");
+        addContent("#cust-name", clientName + ' gostou ');
+        create("i", "like-solid", "bx bxs-like golden", "#cust-name");        
     } else if (dislike) {
-        create("i", "dislike-solid", "bx bxs-dislike", "#cust-name");
+        addContent("#cust-name", clientName + ' não gostou ');
+        create("i", "dislike-solid", "bx bxs-dislike golden", "#cust-name");        
     } else {
-        create("i", "", "bx bxs-message-rounded-dots", "#cust-name");
+        addContent("#cust-name", clientName + ' disse ');
+        create("i", "", "bx bxs-message-rounded-dots golden", "#cust-name");        
     }
 
     let date = document.getElementById("visit-date").value;
-    create("p", "cust-visit", "cust-visit", ".feedback-container");
+    create("p", "cust-visit", "cust-visit golden", ".feedback-container");
     addContent("#cust-visit", date);
-
+    
     let comment = document.getElementById("customers-comment").value;
     create("p", "cust-comment", "", ".feedback-container");
     addContent("#cust-comment", comment);
-
-    create("hr", "", "hr", ".feedback-container");  
+    
+    create("hr", "hr", "", ".feedback-container");  
 
     counter++;
-    colorHRelements();    
+    colorHRelements();   
 }
 function colorHRelements() {
     document.getElementsByTagName("hr")[counter].setAttribute("color", "#d2ac47");
@@ -55,16 +57,17 @@ function hitDislike() {
 }
 function setThumbUp() {
     if (like) {
-        likeIcon.setAttribute("color", "#8a00ff");
-        dislikeIcon.setAttribute("color", "darkgoldenrod");
-    } else if (dislike) {
-        likeIcon.setAttribute("color", "darkgoldenrod");
         dislikeIcon.setAttribute("color", "#8a00ff");
+        likeIcon.setAttribute("color", "darkgoldenrod");
+    } else if (dislike) {
+        dislikeIcon.setAttribute("color", "darkgoldenrod");
+        likeIcon.setAttribute("color", "#8a00ff");
     } else {
-        likeIcon.setAttribute("color", "#darkgoldenrod");
-        dislikeIcon.setAttribute("color", "#darkgoldenrod");
+        likeIcon.setAttribute("color", "#8a00ff");
+        dislikeIcon.setAttribute("color", "#8a00ff");
     }
 }
+
 let likeIcon = document.getElementById("like-solid");
 let dislikeIcon = document.getElementById("dislike-solid");
 let like = false;
@@ -74,4 +77,3 @@ let dislikeClick = 1;
 
 let counter = 0;
 colorHRelements();
-

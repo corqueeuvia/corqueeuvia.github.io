@@ -48,7 +48,7 @@ header>p{
 }
 main {
     width: 100%;
-    height: 800px;
+    height: 850px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +56,6 @@ main {
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace;
     font-size: 20px;
-    color: linear-gradient();
 }
 main>h2 {
     margin: 0;
@@ -69,10 +68,10 @@ main>p {
     color: #d2ac47;
 }
 form {
-    height: 650px;
+    height: 700px;
     width: 45%;
     padding: 15px;
-    font-size: 18px;
+    font-size: 22px;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -92,13 +91,14 @@ label {
     box-sizing: border-box;
     border-radius: 5px;
     margin-top: 20px;
+    font-family: 'Comfortaa', cursive;
 }
 input {
     height: 30px;
 }
 .input-txt {
     height: 150px;
-    word-break: break-all;
+    word-break:keep-all;
 }
 .golden {
     background-image: linear-gradient(90deg, #ae8625, #f7ef8a, #d2ac47, #edc967);
