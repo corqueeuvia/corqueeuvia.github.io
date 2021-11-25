@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1366, initial-scale=1.0">
+    <link href="assets/stylesheets/set-style.css" type="text/css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+
+
+    <title>cafajeste</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>cafajeste</h1>
+            <p>(do jeitinho que você gosta)</p>
+        </header>
+        <main>
+            <h2 class="golden">foi bom pra você?</h2>
+            <p>responda esta pesquisa de satisfação para melhorar o atendimento em nossa casa noturna</p>
+            <div class="two-column">
+                <form>
+                    <label>seu nome</label>
+                    <input type="text" class="input" id="customers-name">
+        
+                    <label>dia da visita</label>
+                    <input type="date" class="input" id="visit-date">
+    
+                    <label>recomenda?</label>
+                    <div id="like-section">
+                        <box-icon onclick=hitLike() name='like' type="solid" id="like-solid" color="darkgoldenrod" size="lg"></box-icon>
+                        <box-icon onclick=hitDislike() name='dislike' type="solid" id="dislike-solid" color="darkgoldenrod" size="lg"></box-icon>
+                    </div>
+    
+                    <label>comentários</label>
+                    <textarea id="customers-comment" class="input-txt" rows="5" cols="25" maxlength="280"></textarea>
+    
+                    <button type="button" onclick=displayFeedback() id="submit-btn">ENVIAR</button>    
+                    
+                </form>
+                <section class="customers-feedback">
+                    <h2 class="golden">quem já provou sabe:</h2>
+
+
+                    <div class="feedback-container">
+                        <h3 class="cust-name">caique <i class='bx bxs-like'></i></h3>
+                        <p class="cust-visit">2021/11/19</p>
+                        <p>melhor playlist EVAAAAH! voltarei sim ou claro??! :D</p>
+                        <hr class="hr">
+                    </div>
+
+
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="assets/scripts/script.js"></script>
+</body>
+</html>
