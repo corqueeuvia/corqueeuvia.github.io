@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Press+Start+2P&display=swap');
+
+.flex {
+    display: flex;
+}
+
+body {
+    width: 100%;
+    height: 590px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #030201;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+button, input {
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin: 7px 0;
+    box-sizing: border-box;
+    font-size: 40px;
+}
+
+main {
+    margin: 0;
+    width: 600px;
+    height: 500px;
+    background-color: #010203;
+    border-radius: 10px;
+    border: 3px solid #4AF626;
+    box-shadow: 2px 2px 8px #4AF626;
+}
+
+.content {
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.left-column {
+    width: 405px;
+    height: 270px;
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: right; 
+    background-color: #ffffff11;
+    font-family: 'Press Start 2P', cursive;
+    color: #4AF626;
+}
+
+.operators {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.small-btn {
+    width: 180px;
+    height: 50px;
+    text-align: center;
+}
+
+.right-column {
+    width: 100px;
+    height: 270px;
+}
+
+.large-btn {
+    width: 100px;
+    height: 115px;
+    text-align: center;
+}
+        
+.result {
+    background-color: #010203;
+    width: inherit;
+    height: 150px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+#operation-display {
+    width: 600px;
+    height: 50px;
+    font-size: 50px;
+    margin: 15px 0;
+    color: #4AF626AA;
+    letter-spacing: 4px;
+}
+
+#result-display {
+    width: 600px;
+    height: 45px;
+    font-size: 30px;
+    margin: 25px 0;
+    font-family: 'Press Start 2P', cursive;
+    color: #4AF626;
+}
+
+#copyright {
+    font-family: 'Comfortaa', cursive;
+    
+    font-size: 20px;
+    text-align: right;
+    margin-right: 10px;
+}
+a {
+    all: unset;
+    background-image: linear-gradient(90deg, #FF007f, #9600ff, #05e3f5, #4AF626);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+a:hover {
+    cursor: pointer;    
+    background-image: linear-gradient(90deg, #4AF626, #05e3f5, #9600ff, #FF007f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
