@@ -2,13 +2,14 @@
 @import url('https://unpkg.com/boxicons@2.0.9/dist/boxicons.js');
 
 body::-webkit-scrollbar{
-    width: 0.25rem;
+    width: 5px;
 }
 body::-webkit-scrollbar-track{
     background: #010203;
 }
 body::-webkit-scrollbar-thumb{
     background: #8a00ff;
+    border-radius: 5px;
 }
 
 body{
