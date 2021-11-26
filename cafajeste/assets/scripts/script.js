@@ -44,13 +44,13 @@ function colorHRelements() {
     document.getElementsByTagName("hr")[counter].setAttribute("color", "#d2ac47");
 }
 function hitLike() {
-    like = true;
+    like = !like;
     dislike = false;
     setThumbUp();
     likeClick++;   
 }
 function hitDislike() {
-    dislike = true;
+    dislike = !dislike;
     like = false;
     setThumbUp();
     dislikeClick++;
