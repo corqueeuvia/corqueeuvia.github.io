@@ -1,0 +1,173 @@
+@font-face {
+	font-family: 'Conv_wg_statik';
+	src: url('fonts/wg_statik.eot');
+	src: local('☺'), url('assets/fonts/wg_statik_font/wg_statik.woff') format('woff'), url('assets/fonts/wg_statik_font/wg_statik.ttf') format('truetype'), url('assets/fonts/wg_statik_font/wg_statik.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Shadows+Into+Light+Two&display=swap');
+body::-webkit-scrollbar{
+    width: 5px;
+}
+body::-webkit-scrollbar-track{
+    background: #008952;
+}
+body::-webkit-scrollbar-thumb{
+    background: orange;
+    border-radius: 5px;
+}
+body {
+    background-color: #008952;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+}
+h1, h2, h3, p { margin: 0; }
+ul { list-style: inside; padding-left: 0; list-style-type: none;}
+header {
+    text-align: center;
+    margin: 30px 0;
+}
+h2 {
+    font-family: 'Shadows Into Light Two', cursive;
+    letter-spacing: 3px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: orange;
+    text-shadow: 1px 1px 2px #000;
+}
+header > h1 {
+    font-family: 'Lakki Reddy', cursive;
+    font-size: 60px;
+    letter-spacing: 8px;
+    color:#f6f6f6;
+    height: 50px;
+    text-shadow: 1px 1px 2px #000;
+}
+#logo-span {
+    color: orange;
+}
+header > p {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+main {
+    width: 90%;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    /* background-color: blueviolet; */
+}
+form {
+    width: 500px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;;
+    background-color: #000;
+    font-size: 22px;
+    color: #f6f6f6;
+    border-radius: 10px 0 0 10px;
+    margin: 60px;
+}
+ol:first-child {
+    margin-top: 0;
+}
+ol li {
+    line-height: 40px;
+}
+ol h2 {
+    margin-top: 30px;
+}
+.price-span {
+    color: #008952;
+}
+#verify-background {
+    background-image: url(../image/fire.jpg);
+    background-size: cover;
+    border-radius: 0 10px 10px 0;
+
+}
+.verify-order {
+    width: 600px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:#00000060;
+    color: #f6f6f6;
+    font-size: 22px;
+    margin: 30px;
+    border-radius: 0 10px 10px 0;
+    position: absolute;
+    left: 600px;
+}
+#verify-content {
+    opacity: 0;
+}
+#verify-content p {
+    margin-bottom: 20px;
+}
+.hidden {
+    opacity: 0;
+}
+.btn {
+    width: 300px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 22px;
+    border: 1px solid orange;
+    border-bottom: 3px solid #008952;
+    border-right: 3px solid #008952;
+    background-color: #075a39;
+    color: orange;
+    transition-duration: 0.5s;    
+    text-shadow: 1px 1px 2px #000;
+}
+.btn:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #075a39;
+    border-right: 3px solid #075a39;
+    background-color: #008952;
+    font-size: 23px;    
+}
+.order-review {
+    width: 60%;
+    line-height: 40px;
+    text-align: center;
+    
+}
+.review {
+    letter-spacing: 4px;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-weight: bold;
+}
+#checkout {
+    text-align: center;
+    height: 80px;
+    width: 300px;  
+    text-shadow: 1px 1px 2px #000;
+}
+#final-price {
+    font-size: 40px;
+    background-color: rgb(255, 165, 0);
+    color: #075a39;
+    text-shadow: 1px 1px 2px #f6f6f6;
+    padding: 0 15px;
+    border-radius: 30px;
+}
+.ordered {
+    width: 300px;
+    height: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+#order-confirmation {
+    opacity: 0;
+}

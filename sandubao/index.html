@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/stylesheet/style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lakki+Reddy&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>SANDU<span id="logo-span">BÃO</span></h1>
+        <h2>&lt;&lt;monte seu lanche!&gt;&gt;</h2>
+    </header>
+    <main>
+        <form id="form">
+            <ol>
+                <h2><li>Pão</li></h2>
+                <ul>
+                    <li>
+                        <input type="radio" id="roll-bread" name="bread" value="roll-bread" />
+                        <label for="roll-bread">Pão francês <span class="price-span">(R$3.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="australian" name="bread" value="australian" />
+                        <label for="australian">Pão australiano <span class="price-span">(R$8.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="brioche" name="bread" value="brioche" />
+                        <label for="brioche">Pão de brioche <span class="price-span">(R$6.00)</span></label>
+                    </li>
+                </ul>
+
+                <h2><li>Proteína</li></h2>
+                <ul>
+                    <li>
+                        <input type="radio" id="picanha" name="protein" value="picanha" />
+                        <label for="picanha">Hambúrguer de picanha <span class="price-span">(R$13.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="ribs" name="protein" value="ribs">
+                        <label for="ribs">Hambúrguer de costela <span class="price-span">(R$10.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="plant" name="protein" value="plant" />
+                        <label for="plant">Hambúrguer de planta <span class="price-span">(R$12.00)</span></label>
+                    </li>
+                </ul>
+
+                <h2><li>Queijo</li></h2>
+                <ul>
+                    <li>
+                        <input type="radio" id="mozzarella" name="cheese" value="mozzarella" />
+                        <label for="mozzarella">Mussarela <span class="price-span">(R$3.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="prato" name="cheese" value="prato" />
+                        <label for="prato">Queijo prato <span class="price-span">(R$3.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="cheddar" name="cheese" value="cheddar" />
+                        <label for="cheddar">Queijo cheddar <span class="price-span">(R$5.00)</span></label>
+                    </li>
+                </ul>
+
+                <h2><li>Salada</li></h2>
+                <ul>
+                    <li>
+                        <input type="radio" id="lettuce" name="salad" value="lettuce"  />
+                        <label for="lettuce">Alface <span class="price-span">(R$5.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="tomato" name="salad" value="tomato" />
+                        <label for="tomato">Tomate <span class="price-span">(R$5.00)</span></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="none" name="salad" value="none" />
+                        <label for="none">Sem salada <span class="price-span">(R$5.00)</span></label>
+                    </li>
+                </ul>   
+            </ol>
+
+            <input type="button" id="order-btn" class="btn" value="Montar pedido" onclick=makeOrderOutput() />
+
+        </form>
+
+        <div id="verify-background" class="verify-order"></div>
+
+        <section id="verify-content" class="verify-order">
+            <h2>Confere aí</h2>
+            <p>É assim que vamos mandar pro chapeiro, tá?</p>
+
+            <div class="order-review">
+                <p id="bread" class="review"></p>
+                <p id="protein" class="review"></p>                
+                <p id="cheese" class="review"></p>
+                <p id="salad" class="review"></p>
+                <hr>
+            </div>
+
+            <div id="checkout" class=" flex" >
+                <span>Total a pagar: </span><span id="final-price" class="review"></span>
+            </div>
+            
+
+            <input type="button" id="verified-btn" class="btn" value="Põe na chapa!" onclick="showOrderConfirmation()" />
+
+            <div id="order-confirmation" class="ordered">
+                <h2>Tá no fogo!</h2>
+                <p>Seu pedido ficará pronto em 45 minutos. Pode retirar aqui na Rua dos Bobos, n° 0</p>
+
+                <input type="button" id="ok-btn" class="btn" value="Beleza :)" onclick="resetAllFields()" />
+
+            </div>
+
+        </section>
+    </main>
+    <script src="assets/script/script.js"></script>
+</body>
+</html>
