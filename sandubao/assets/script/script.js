@@ -126,9 +126,32 @@ function showOrderConfirmation() {
 function resetAllFields() {
     orderConfirmation.style.opacity = "0";
     verifyContent.style.opacity = "0";
+    clearRadioInputs();
 }
 
 //displays an error alert if input values cannot be read
 function reportError() {
     alert("Algo deu errado! Tenta mais uma vez, não desiste da gente..");
+}
+
+function clearRadioInputs() {
+    let breadRadio = document.getElementsByName("bread");
+    for (let i = 0; i < breadRadio.length; i++) {
+        breadRadio[i].checked = false;
+    }
+
+    let proteinRadio = document.getElementsByName("protein");
+    for (let i = 0; i < proteinRadio.length; i++) {
+        proteinRadio[i].checked = false;
+    }
+
+    let cheeseRadio = document.getElementsByName("cheese");
+    for (let i = 0; i < cheeseRadio.length; i++) {
+        cheeseRadio[i].checked = false;
+    }
+
+    let saladRadio = document.getElementsByName("salad");
+    for (let i = 0; i < saladRadio.length; i++) {
+        saladRadio[i].checked = false;
+    }
 }
