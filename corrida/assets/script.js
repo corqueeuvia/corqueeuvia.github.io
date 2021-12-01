@@ -57,6 +57,7 @@ function playQuickRace() {
             scoreEdna++;
         }
     }
+    console.log(scorePedro, scoreJuca, scoreEdna);
     displayRank();
     resetScore();
 }
