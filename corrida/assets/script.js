@@ -4,16 +4,15 @@ const thirdPlaceDisplay = document.getElementById("3rd");
 
 const minPedro = 150;
 const maxPedro = 230;
-const driftPedro = 0.3;
+const driftPedro = 0.03;
 
 const minJuca = 120;
 const maxJuca = 260;
-const driftJuca = 0.5;
+const driftJuca = 0.05;
 
-//a derrapagem de edna não cumpre os requisitos porque assim os outros jogadores tem chance
 const minEdna = 180;
 const maxEdna = 220;
-const driftEdna = 0.5;
+const driftEdna = 0.01;
 
 let velPedro = 0;
 let velJuca = 0;
