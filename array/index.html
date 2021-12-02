@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
+    <title>Sort 4</title>
+</head>
+
+<body>
+    <header>
+        <h1>Sort 4 numbers</h1>
+    </header>
+    <main>
+        <section class="box wrap">
+            <h2>INPUT</h2>
+            <input type="number" id="in-a" class="input" />
+            <input type="number" id="in-b" class="input" />
+            <input type="number" id="in-c" class="input" />
+            <input type="number" id="in-d" class="input" />
+
+            <input type="button" id="save" value="SAVE" class="btn" onclick="saveNumbers()" />
+            <input type="button" id="reverse" value="REVERSE" class="btn" onclick="reverseNumbers()"/>
+            <input type="button" id="ascend" value="ASCEND" class="btn" onclick="sortAscending()"/>
+            <input type="button" id="random" value="NOT FEELING CREATIVE" class="btn" onclick="getRandomNumbers()"/>
+            <input type="button" id="clear" value="RESET" class="btn" onclick="resetPage()"/>
+        </section>
+        <section class="box">
+            <h2>OUTPUT</h2>
+            <input type="text" id="out-a" value="#1" class="output" />
+            <input type="text" id="out-b" value="#2" class="output" />
+            <input type="text" id="out-c" value="#3" class="output" />
+            <input type="text" id="out-d" value="#4" class="output" />
+        </section>
+    </main>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

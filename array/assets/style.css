@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Catamaran:wght@400;800&family=Major+Mono+Display&display=swap');
+
+body {background-color: #14342B;
+    margin: 0;
+    color: #fefefe;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16pt;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 50pt;
+    letter-spacing: 4pt; 
+    text-align: center; 
+    color:#91ff37;
+    text-shadow: 1pt 1pt 4pt #91ff37;
+}
+
+h2 {font-family: 'Major Mono Display', monospace; font-size: 22pt; color:#91ff37;}
+
+.box {
+    width: 550px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+
+    border-radius: 10px;
+    background-color: #ffffff15;
+    padding-bottom: 10px;
+}
+.wrap {
+    flex-wrap: wrap;
+    flex-direction:row;
+}
+.box h2 { 
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+}
+.output, .input {
+    border-radius: 5px;
+    height: 22pt;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    margin: 10px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: 15pt;
+
+    background-color: #00000030;
+    color: #91ff37;
+}
+.output {width: 380px;}
+.input {width: 180px;}
+.btn {
+    all: unset;
+    border-radius: 5px;
+    height: 22pt;
+    background-color: #91ff37;
+    color: #1e1e1e;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 5px solid #509902;
+    transition-duration: 5ms;
+    width: 108px;
+    margin: 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: translate(0px,5px);
+    background-color: #509902;
+    border-bottom: 5px solid #356402;
+}
+
+#random {
+    width: 280px;
+}
+
+#clear {
+    width: 80px;
+    background-color: #e68516;
+    border-bottom: 5px solid #b46000;
+}
+
+#clear:hover {
+    background-color: #b46000;
+    border-bottom: 5px solid #884902;
+}
