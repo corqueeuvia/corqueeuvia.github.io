@@ -55,7 +55,7 @@ h2 {font-family: 'Major Mono Display', monospace; font-size: 22pt; color:#91ff37
 }
 .output, .input {
     border-radius: 5px;
-    height: 22pt;
+    height: 30pt;
     text-align: center;
     padding: 10px;
     font-weight: bold;
