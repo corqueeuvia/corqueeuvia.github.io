@@ -67,26 +67,30 @@ function punishBart() {
     let eraseCount = parseInt(repeat / boardCapacity);
     let remainder = repeat % boardCapacity;
 
-    if (remainder == 0) {
-        for (let i = 0; i < boardCapacity; i++) {
-            writePhrase(x, y, phrase);
-            y += 30;
+    if (repeat > 0) {
+        if (remainder == 0) {
+            for (let i = 0; i < boardCapacity; i++) {
+                writePhrase(x, y, phrase);
+                y += 30;
+            }
+            eraseCount--;
+        } else {
+            while (phraseCount < remainder) {
+                writePhrase(x, y, phrase);
+                phraseCount++;
+                y += 30;
+            }
         }
-        eraseCount--;
-    } else {
-        while (phraseCount < remainder) {
-            writePhrase(x, y, phrase);
-            phraseCount++;
-            y += 30;
-        }
-    }
 
-    if (eraseCount == 0) {
-        eraseDisplay.innerHTML = "Bart nem precisou apagar a lousa neste castigo!";
-    } else if (eraseCount == 1) {
-        eraseDisplay.innerHTML = "Bart apagou a lousa só " + eraseCount + " vez neste castigo.";
+        if (eraseCount == 0) {
+            eraseDisplay.innerHTML = "Bart nem precisou apagar a lousa neste castigo!";
+        } else if (eraseCount == 1) {
+            eraseDisplay.innerHTML = "Bart apagou a lousa só " + eraseCount + " vez neste castigo.";
+        } else {
+            eraseDisplay.innerHTML = "Bart apagou a lousa " + eraseCount + " vezes neste castigo.";
+        }
     } else {
-        eraseDisplay.innerHTML = "Bart apagou a lousa " + eraseCount + " vezes neste castigo.";
+        eraseDisplay.innerHTML = "Parabéns por não castigar o Bart! Pedagogia é isso :D";
     }
 
 }
