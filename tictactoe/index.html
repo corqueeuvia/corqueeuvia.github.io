@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
+    <title>TIC TAC TOE</title>
+</head>
+
+<body>
+    <header>
+        <h1>TIC TAC TOE</h1>
+        <p>PLAYER 1 IS <span class="symbols">O</span>, PLAYER 2 IS <span class="symbols">X</span></p>
+    </header>
+    <main>
+        <aside id="game-info">
+            <h2>NEXT MOVE:</h2>
+            <span id="next-player">O</span>
+            <h2>SCORE</h2>
+            <table>
+                <tr>
+                    <th>O</th>
+                    <th>X</th>
+                </tr>
+                <tr>
+                    <td id="o-score">0</td>
+                    <td id="x-score">0</td>
+                </tr>
+            </table>
+        </aside>
+        <section id="game-arena">
+            <table>
+                <tr>
+                    <td id="00" class="game-square" onclick="setPlayer(id)"></td>
+                    <td id="01" class="game-square" onclick="setPlayer(id)"></td>
+                    <td id="02" class="game-square" onclick="setPlayer(id)"></td>
+                </tr>
+                <tr>
+                    <td id="10" class="game-square" onclick="setPlayer(id)"></td>
+                    <td id="11" class="game-square" onclick="setPlayer(id)"></td>
+                    <td id="12" class="game-square" onclick="setPlayer(id)"></td>
+                </tr>
+                <tr>
+                    <td id="20" class="game-square" onclick="setPlayer(id)"></td>
+                    <td id="21" class="game-square" onclick="setPlayer(id)"></td>
+                    <td id="22" class="game-square" onclick="setPlayer(id)"></td>
+                </tr>
+            </table>
+        </section>
+        <section id="winner-display">
+            <h2>PLAYER <span id="winner">X</span> WINS!</h2>
+        </section>
+        <aside>
+            <div class="game-menu" id="game-menu">
+                <input type="button" class="btn" value="again" title="start new match and keep score">
+                <input type="button" class="btn" value="reset" title="reset match and score" onclick="reset()">
+                
+            </div>
+            <div>
+                <p><a href="https://www.linkedin.com/in/corcoviacaique/" target="_blank">by: caique</a></p>
+            </div>
+        </aside>
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
