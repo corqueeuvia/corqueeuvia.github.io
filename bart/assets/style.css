@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 /*
 font-family: 'Architects Daughter', cursive;
 */
@@ -11,7 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Secular One', sans-serif;
     background-color:#B4D6AA;
 }
 .container {
@@ -22,6 +23,12 @@ h1 {
     margin-bottom: 0;
     color:#142918;
 }
+h2 {
+    color: #142918;
+}
+.btn:hover {
+    cursor: pointer;
+}
 input, button {
     height: 40px;
     width: 200px;
@@ -30,4 +37,8 @@ input, button {
     border-radius: 10px;
     outline: none;
     border: none;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+    background-color: #142918;
+    color: #f6f6f6;
 }
