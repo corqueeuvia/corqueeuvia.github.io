@@ -90,6 +90,8 @@ function getRandomNumbers() {
     input_b.value = getRandomInt(20, 10000);
     input_c.value = getRandomInt(100, 10999);
     input_d.value = getRandomInt(50, 500);
+    saved = false;
+    clearMemory();
 }
 
 //get a random number in specified range (used in getRandomNumbers above)
@@ -127,6 +129,8 @@ function clearInput() {
 function resetPage() {
     clearOutput();
     clearInput();
+    clearMemory();
+    saved = false;
 }
 
 //display custom error message into output fields depending on the action attempted
@@ -135,4 +139,11 @@ function showError(action) {
     output_b.value = '<------------------------';
     output_c.value = 'SAVE THE NUMBERS';
     output_d.value = 'BEFORE ' + action;
+}
+
+function clearMemory() {
+    a = 0;
+    b = 0;
+    c = 0;
+    d = 0;
 }
