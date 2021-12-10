@@ -10,30 +10,31 @@ const output_b = document.getElementById("out-b");
 const output_c = document.getElementById("out-c");
 const output_d = document.getElementById("out-d");
 
-//variables to store numbers
-let a = 0;
-let b = 0;
-let c = 0;
-let d = 0;
+//array to store variables
+let savedNums = [];
 
 //storage verification
 let saved = false;
 
 //get values from input fields and stores into variables
 function saveNumbers() {
-    a = input_a.value;
-    b = input_b.value;
-    c = input_c.value;
-    d = input_d.value;
+    let a = input_a.value;
+    savedNums[0] = a;
+    let b = input_b.value;
+    savedNums[1] = b;
+    let c = input_c.value;
+    savedNums[2] = c;
+    let d = input_d.value;
+    savedNums[3] = d;
 
     //error verification not to store empty values
-    if (a === '' &&
-        b === '' &&
-        c === '' &&
+    if (a === '' ||
+        b === '' ||
+        c === '' ||
         d === '') {
         output_a.value = '#### OPS! ####';
         output_b.value = '<------------------------';
-        output_c.value = 'MUST TYPE IN THE';
+        output_c.value = 'MUST TYPE IN 4';
         output_d.value = 'NUMBERS TO SAVE';
 
     } else {
@@ -46,20 +47,18 @@ function saveNumbers() {
 //get values into an array and reverse its position
 function reverseNumbers() {
     if (saved) {
-        let inputNumbers = [a, b, c, d];
-        let reverseNumbers = [];
-        let counter = (inputNumbers.length) - 1;
 
+        let counter = (savedNums.length) - 1;
+        let reverseNumbers = [];
         while (counter >= 0) {
-            let num = inputNumbers[counter];
+            let num = savedNums[counter];
             reverseNumbers.push(num);
             counter--;
         }
 
-        output_a.value = reverseNumbers[0];
-        output_b.value = reverseNumbers[1];
-        output_c.value = reverseNumbers[2];
-        output_d.value = reverseNumbers[3];
+        savedNums = reverseNumbers;
+
+        displayNumbers();
     } else {
         showError('REVERSING');
     }
@@ -68,17 +67,22 @@ function reverseNumbers() {
 //sort values and display them in ascending order
 function sortAscending() {
     if (saved) {
-        let inputNumbers = [parseInt(a), parseInt(b), parseInt(c), parseInt(d)];
-        inputNumbers.sort(function (a, b) {
-            return a - b;
-        });
+        let ascending = changeToIntegers(savedNums);
+        let hold = 0;
 
-        output_a.value = inputNumbers[0];
-        output_b.value = inputNumbers[1];
-        output_c.value = inputNumbers[2];
-        output_d.value = inputNumbers[3];
+        for (let i = 0; i < ascending.length; i++) {
+            for (let j = 0; j < ascending.length; j++) {
+                if (ascending[i] < ascending[j]) {
+                    hold = ascending[i];
+                    ascending[i] = ascending[j];
+                    ascending[j] = hold;
+                }
+            }
+        }
+        savedNums = ascending;
 
-        console.log(inputNumbers);
+        displayNumbers();
+        
     } else {
         showError('ASCENDING');
     }
@@ -103,10 +107,10 @@ function getRandomInt(min, max) {
 
 //send values into output fields after sorting, reversing or saving
 function displayNumbers() {
-    output_a.value = a;
-    output_b.value = b;
-    output_c.value = c;
-    output_d.value = d;
+    output_a.value = savedNums[0];
+    output_b.value = savedNums[1];
+    output_c.value = savedNums[2];
+    output_d.value = savedNums[3];
 }
 
 //clear outputfields not to display any value (used in resetPage function)
@@ -141,9 +145,16 @@ function showError(action) {
     output_d.value = 'BEFORE ' + action;
 }
 
+//forget saved numbers
 function clearMemory() {
-    a = 0;
-    b = 0;
-    c = 0;
-    d = 0;
+    savedNums = [];
+}
+
+//change an array's elements into integers
+function changeToIntegers(array) {
+    let integers = [];
+    for (i = 0; i < array.length; i++) {
+        integers.push(parseInt(array[i]));
+    }
+    return integers;
 }
