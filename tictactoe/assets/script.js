@@ -1,5 +1,5 @@
-let click = 0;
-let player = '';
+let click = false;
+let player = 'O';
 
 const gameArena = [
     ["-", "-", "-"],
@@ -19,46 +19,96 @@ const winnerSpan = document.getElementById("winner");
 const winnerDisplay = document.getElementById("winner-display");
 
 function countClick() {
-    click++;
+    click = !click;
+
     console.log(click);
 }
+
 function setPlayer(id) {
 
     countClick();
+
     const gameSquare = document.getElementById(id);
-    if (click % 2 == 1) { //odd click
+
+   // markSquareById(id);
+
+    if (click) { //odd click
         player = "O"
         gameSquare.innerHTML = player;
     } else {
         player = "X"
         gameSquare.innerHTML = player;
     }
-    displayNextPlayer();
 
-    markSquareById(id);
+    displayNextPlayer();
 
     searchWinner();
 
 }
 function markSquareById(id) {
     if (id == "00") {
-        gameArena[0][0] = player;
+        if (gameArena[0][0] == '-') {
+            gameArena[0][0] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else if (id == "01") {
-        gameArena[0][1] = player;
+        if (gameArena[0][1] == '-') {
+            gameArena[0][1] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else if (id == "02") {
-        gameArena[0][2] = player;
+        if (gameArena[0][2] == '-') {
+            gameArena[0][2] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else if (id == "10") {
-        gameArena[1][0] = player;
+        if (gameArena[1][0] == '-') {
+            gameArena[1][0] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else if (id == "11") {
-        gameArena[1][1] = player;
+        if (gameArena[1][1] == '-') {
+            gameArena[1][1] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else if (id == "12") {
-        gameArena[1][2] = player;
+        if (gameArena[1][2] == '-') {
+            gameArena[1][2] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else if (id == "20") {
-        gameArena[2][0] = player;
+        if (gameArena[2][0] == '-') {
+            gameArena[2][0] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else if (id == "21") {
-        gameArena[2][1] = player;
+        if (gameArena[2][1] == '-') {
+            gameArena[2][1] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     } else {
-        gameArena[2][2] = player;
+        if (gameArena[2][2] == '-') {
+            gameArena[2][2] = player;
+        } else {
+            //algo acontece
+            click = !click;
+        }
     }
     console.log(gameArena);
 }
@@ -96,11 +146,21 @@ function searchWinner() {
     if (click > 4) {
         if (gameArena[0][0] == "O" && gameArena[0][1] == "O" && gameArena[0][2] == "O" ||
             gameArena[1][0] == "O" && gameArena[1][1] == "O" && gameArena[1][2] == "O" ||
-            gameArena[2][0] == "O" && gameArena[2][1] == "O" && gameArena[2][2] == "O") {
+            gameArena[2][0] == "O" && gameArena[2][1] == "O" && gameArena[2][2] == "O" ||
+            gameArena[0][0] == "O" && gameArena[1][0] == "O" && gameArena[2][0] == "O" ||
+            gameArena[0][1] == "O" && gameArena[1][1] == "O" && gameArena[2][1] == "O" ||
+            gameArena[0][2] == "O" && gameArena[1][2] == "O" && gameArena[2][2] == "O" ||
+            gameArena[0][0] == "O" && gameArena[1][1] == "O" && gameArena[2][2] == "O" ||
+            gameArena[0][2] == "O" && gameArena[1][1] == "O" && gameArena[2][0] == "O") {
             oWins();
         } else if (gameArena[0][0] == "X" && gameArena[0][1] == "X" && gameArena[0][2] == "X" ||
             gameArena[1][0] == "X" && gameArena[1][1] == "X" && gameArena[1][2] == "X" ||
-            gameArena[2][0] == "X" && gameArena[2][1] == "X" && gameArena[2][2] == "X") {
+            gameArena[2][0] == "X" && gameArena[2][1] == "X" && gameArena[2][2] == "X" ||
+            gameArena[0][0] == "X" && gameArena[1][0] == "X" && gameArena[2][0] == "X" ||
+            gameArena[0][1] == "X" && gameArena[1][1] == "X" && gameArena[2][1] == "X" ||
+            gameArena[0][2] == "X" && gameArena[1][2] == "X" && gameArena[2][2] == "X" ||
+            gameArena[0][0] == "X" && gameArena[1][1] == "X" && gameArena[2][2] == "X" ||
+            gameArena[0][2] == "X" && gameArena[1][1] == "X" && gameArena[2][0] == "X") {
             xWins();
         }
     }
