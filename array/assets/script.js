@@ -18,14 +18,10 @@ let saved = false;
 
 //get values from input fields and stores into variables
 function saveNumbers() {
-    let a = input_a.value;
-    savedNums[0] = a;
-    let b = input_b.value;
-    savedNums[1] = b;
-    let c = input_c.value;
-    savedNums[2] = c;
-    let d = input_d.value;
-    savedNums[3] = d;
+    const a = input_a.value;
+    const b = input_b.value;
+    const c = input_c.value;
+    const d = input_d.value;
 
     //error verification not to store empty values
     if (a === '' ||
@@ -39,17 +35,22 @@ function saveNumbers() {
 
     } else {
         saved = true;
+        savedNums[0] = a;
+        savedNums[1] = b;
+        savedNums[2] = c;
+        savedNums[3] = d;
         displayNumbers();
         clearInput();
     }
+    return true;
 }
 
 //get values into an array and reverse its position
 function reverseNumbers() {
     if (saved) {
 
-        let counter = (savedNums.length) - 1;
-        let reverseNumbers = [];
+        const counter = (savedNums.length) - 1;
+        const reverseNumbers = [];
         while (counter >= 0) {
             let num = savedNums[counter];
             reverseNumbers.push(num);
@@ -62,6 +63,7 @@ function reverseNumbers() {
     } else {
         showError('REVERSING');
     }
+    return true;
 }
 
 //sort values and display them in ascending order
@@ -82,11 +84,12 @@ function sortAscending() {
         savedNums = ascending;
 
         displayNumbers();
-        
+
     } else {
         showError('ASCENDING');
     }
 }
+return true;
 
 //generate random numbers for the input fields so user doesn't need to pick any
 function getRandomNumbers() {
@@ -96,6 +99,7 @@ function getRandomNumbers() {
     input_d.value = getRandomInt(50, 500);
     saved = false;
     clearMemory();
+    return true;
 }
 
 //get a random number in specified range (used in getRandomNumbers above)
@@ -111,6 +115,7 @@ function displayNumbers() {
     output_b.value = savedNums[1];
     output_c.value = savedNums[2];
     output_d.value = savedNums[3];
+    return true;
 }
 
 //clear outputfields not to display any value (used in resetPage function)
@@ -119,6 +124,7 @@ function clearOutput() {
     output_b.value = '';
     output_c.value = '';
     output_d.value = '';
+    return true;
 }
 
 //clear input fields so they don't show any value (used in resetPage and saveNumbers functions)
@@ -127,6 +133,7 @@ function clearInput() {
     input_b.value = '';
     input_c.value = '';
     input_d.value = '';
+    return true;
 }
 
 //reset page to its initial state (used on button reset)
@@ -135,6 +142,8 @@ function resetPage() {
     clearInput();
     clearMemory();
     saved = false;
+    //return !saved (?)
+    return true;
 }
 
 //display custom error message into output fields depending on the action attempted
@@ -143,11 +152,13 @@ function showError(action) {
     output_b.value = '<------------------------';
     output_c.value = 'SAVE THE NUMBERS';
     output_d.value = 'BEFORE ' + action;
+    return true;
 }
 
 //forget saved numbers
 function clearMemory() {
     savedNums = [];
+    return true;
 }
 
 //change an array's elements into integers
