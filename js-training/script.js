@@ -54,6 +54,7 @@ function checkComplaintsAmount() {
 
         output.innerHTML = `Nah. You can't have negative complaints, hunny. Try again.`;
     }
+    input.value = "";
 }
 
 //chall 1059 from URI - beecrowd
@@ -92,6 +93,10 @@ function getRangeAndSumNumbers() {
 
         output.innerHTML = `Uh-oh! Insert two different numbers so we can get a range between them.`;
     }
+    document.getElementById("number-a").value = "";
+
+    document.getElementById("number-b").value = "";
+
     return true;
 }
 
@@ -131,6 +136,10 @@ function getRangeAndShowNumbers() {
         const output = document.getElementById("display-numbers");
         output.innerHTML = `Uh-oh! Insert two different numbers so we can get a range between them.`;
     }
+    document.getElementById("number-x").value = "";
+
+    document.getElementById("number-y").value = "";
+    
     return true;
 }
 function generateNumbers(min, max) {
