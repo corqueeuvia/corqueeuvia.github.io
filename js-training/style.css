@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Catamaran:wght@400;800&family=Major+Mono+Display&display=swap');
+
+body {
+    background-color: #0b131a;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 0;
+    color: #fefefe;
+    width: 100%;
+}
+
+main {
+    width: 1300px;
+    height: 2830px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16pt;
+    align-content: space-around;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 50pt;
+    letter-spacing: 4pt; 
+    text-align: center; 
+    color:#ff6700;
+    text-shadow: 1pt 1pt 4pt #ff6700;
+}
+
+h2 {font-family: 'Major Mono Display', monospace; font-size: 22pt; color:#ff6700;}
+
+a {
+    all: unset;
+    color: limegreen;
+    font-size: small;
+}
+
+a:hover {
+    cursor: pointer;
+    color: #d15401;
+    text-decoration: underline;
+}
+
+.challenge-box {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    border-radius: 10px;
+    background-color: #ffffff15;
+    margin: 15px 0 25px 0;
+    padding-bottom: 10px;
+}
+
+.chall-txt {
+    width: 90%;
+    text-align: justify;
+}
+
+.input-fields {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.input-fields > input {
+    margin: 10px 0 10px 0;
+}
+
+.input-fields > button {
+    margin: 15px 0 15px 0;
+}
+
+input {
+    width: 40%;
+    height: 22pt;
+
+    border-radius: 5px;
+    outline: none;
+    border: none;
+
+    font-family: inherit;
+    font-size: 15pt;
+    padding: 5px;
+
+    background-color: #00000030;
+    color: #fb8b24;
+}
+
+input:focus {
+    border: 2px solid #fb8b24;
+}
+
+input::placeholder {color: #fb8b24}
+
+.btn {
+    all: unset;
+    border-radius: 5px;
+    height: 22pt;
+    background-color: #ff6700;
+    color: #1e1e1e;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 5px solid #d15401;
+    transition: all 0.1s;
+    margin: 10px;
+}
+
+.btn:hover, .btn:active {
+    cursor: pointer;
+    transform: translate(0px,5px);
+    border-bottom: 1px solid #d15401;
+}
+
+.btn:focus {
+    border: 4px solid #14342B;
+    color: #14342B
+}
+
+span {
+    /* background-color: aqua; */
+    display: inline-block;
+    width: 550px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+}
+
+/* SIZING EACH CHALLENGE BOX
+challenge #1 */
+
+#neps-152 {
+    height: 500px;
+}
+
+#uri-1059 {
+    height: 530px;
+}
+
+/*blablabla*/
+#uri-1133 {
+    height: 800px;
+}
+#display-numbers {
+    display: inline-block;
+    width: 550px;
+    height: 300px;
+    white-space: wrap;
+    text-align: center;
+    word-break: break-all;
+    overflow: auto;
+    overflow-x: visible;
+}
+
+/*blablabla*/
+#neps-52 input {
+    width: 300px;
+}
+
+#neps-52 .btn {
+    width: auto;
+}
