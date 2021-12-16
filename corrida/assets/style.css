@@ -12,12 +12,45 @@ body {background-color: #14342B;
 
 main {
     width: 1200px;
-    height: auto;
+    height: 1000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
     font-family: 'Catamaran', sans-serif;
     font-size: 16pt;
+}
+
+#car-assembly {
+    width: 1135px;
+    height: 500px; 
+    display: flex;
+    align-items: center;  
+}
+#cars-container {
+    width: 1000px;
+    display: flex;
+}
+
+h3, .contestant span strong {
+    color: #e68516;
+}
+
+.contestant {
+    /* background-color: aqua; */
+    width: 365px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-left: 1px solid #91ff37;
+    border-right: 1px solid #91ff37;
+    text-align: center;
+
+}
+
+.contestant span {
+    display: inline-block;
 }
 
 h1 {
@@ -29,7 +62,13 @@ h1 {
     text-shadow: 1pt 1pt 4pt #91ff37;
 }
 
-h2 {font-family: 'Major Mono Display', monospace; font-size: 22pt; color:#91ff37;}
+h2 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 22pt;
+    color:#91ff37;
+    text-align: center;
+    width: 100%;
+}
 
 .box {
     width: 550px;
