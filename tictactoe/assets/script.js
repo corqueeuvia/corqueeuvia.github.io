@@ -51,6 +51,7 @@ function assignCoordinates(el) {
         markSquareIfFalse(2, 2);
     }
     checkRows();
+    getColSum();
     console.log(`clique é ${click}`);
     console.log(gameArena);
 }
@@ -70,6 +71,13 @@ function markSquareIfFalse(x, y) {
 }
 
 //cerificação de vitória
+function checkSum(sum) {
+    if (sum === 3) {
+        alert("X wins");
+    } else if (sum === 30) {
+        alert("O wins");
+    }
+}
 function checkRows() {
     gameArena[0].forEach(getRowSum);
     rowSum = 0;
@@ -83,10 +91,17 @@ function getRowSum(element) {
     if (element !== false) {
         rowSum += element;
     }
+    checkSum(rowSum);
+}
 
-    if (rowSum === 3) {
-        alert("X wins");
-    } else if (rowSum === 30) {
-        alert("O wins");
-    }    
+function getColSum() {
+    for (let i = 0; i < gameArena.length; i++) {
+        for (let j = 0; j < gameArena.length; j++) {
+            if (gameArena[j][i] !== false) {
+                colSum += gameArena[j][i]
+            }
+        }
+        checkSum(colSum);
+        colSum = 0;
+    }
 }
