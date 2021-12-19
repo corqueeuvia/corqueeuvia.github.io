@@ -1,179 +1,92 @@
 let click = false;
-let player = 'O';
 
 const gameArena = [
-    ["-", "-", "-"],
-    ["-", "-", "-"],
-    ["-", "-", "-"],
+    [false, false, false],
+    [false, false, false],
+    [false, false, false],
 ];
 
 const nextPlayer = document.getElementById("next-player");
-
 const oScoreDisplay = document.getElementById("o-score");
 const xScoreDisplay = document.getElementById("x-score");
-
-let oScore = 0;
-let xScore = 0;
-
 const winnerSpan = document.getElementById("winner");
 const winnerDisplay = document.getElementById("winner-display");
+let gameSquare;
 
-function countClick() {
-    click = !click;
+let oScore = 0; //times O has won a match
+let xScore = 0; //times X has won a match
+let rowSum = 0; //sum of rows in gameArena
+let colSum = 0; //sum of columns in gameArena
+let diaSum = 0; //sum of diagonals in gameArena
 
-    console.log(click);
-}
-
-function setPlayer(id) {
-
-    countClick();
-
-    const gameSquare = document.getElementById(id);
-
-   // markSquareById(id);
-
-    if (click) { //odd click
-        player = "O"
-        gameSquare.innerHTML = player;
-    } else {
-        player = "X"
-        gameSquare.innerHTML = player;
-    }
-
-    displayNextPlayer();
-
-    searchWinner();
-
-}
-function markSquareById(id) {
-    if (id == "00") {
-        if (gameArena[0][0] == '-') {
-            gameArena[0][0] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else if (id == "01") {
-        if (gameArena[0][1] == '-') {
-            gameArena[0][1] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else if (id == "02") {
-        if (gameArena[0][2] == '-') {
-            gameArena[0][2] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else if (id == "10") {
-        if (gameArena[1][0] == '-') {
-            gameArena[1][0] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else if (id == "11") {
-        if (gameArena[1][1] == '-') {
-            gameArena[1][1] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else if (id == "12") {
-        if (gameArena[1][2] == '-') {
-            gameArena[1][2] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else if (id == "20") {
-        if (gameArena[2][0] == '-') {
-            gameArena[2][0] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else if (id == "21") {
-        if (gameArena[2][1] == '-') {
-            gameArena[2][1] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    } else {
-        if (gameArena[2][2] == '-') {
-            gameArena[2][2] = player;
-        } else {
-            //algo acontece
-            click = !click;
-        }
-    }
-    console.log(gameArena);
-}
-function displayNextPlayer() {
-    if (player == "O") {
+//sets next player based on click is true or false
+function setNextPlayer() {
+    if (click) {
         nextPlayer.innerHTML = "X";
-    } else {
+    } else if (!click) {
         nextPlayer.innerHTML = "O";
     }
 }
-function cleanArena() {
-    for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-            gameArena[i][j] = "-"
-            let id = "" + i + j;
-            const gameSquare = document.getElementById(id);
-            gameSquare.innerHTML = "";
-        }
+//gets element id and sets the parameters to mark correct square 
+function assignCoordinates(el) {
+    gameSquare = document.getElementById(el.id);
+    let id = parseInt(el.id);
+    if (id === 0) {
+        markSquareIfFalse(0, 0);
+    } else if (id === 1) {
+        markSquareIfFalse(0, 1);
+    } else if (id === 2) {
+        markSquareIfFalse(0, 2);
+    } else if (id === 10) {
+        markSquareIfFalse(1, 0);
+    } else if (id === 11) {
+        markSquareIfFalse(1, 1);
+    } else if (id === 12) {
+        markSquareIfFalse(1, 2);
+    } else if (id === 20) {
+        markSquareIfFalse(2, 0);
+    } else if (id === 21) {
+        markSquareIfFalse(2, 1);
+    } else if (id === 22) {
+        markSquareIfFalse(2, 2);
     }
-    player = "";
-    click = 0;
+    checkRows();
+    console.log(`clique é ${click}`);
+    console.log(gameArena);
 }
-function reset() {
-    cleanArena();
-    click = 0;
-    player = "";
-    oScore = 0;
-    xScore = 0;
-    oScoreDisplay.innerHTML = oScore;
-    xScoreDisplay.innerHTML = xScore;
+//verifies if square is empty and marks it according to current player
+function markSquareIfFalse(x, y) {
+    if (gameArena[x][y] === false) {
+        if (click) {
+            gameArena[x][y] = 1;
+            gameSquare.innerHTML = "X";
+        } else {
+            gameArena[x][y] = 10;
+            gameSquare.innerHTML = "O";
+        }
+        click = !click;
+        setNextPlayer();
+    }
 }
 
-function searchWinner() {
-    let winner = "";
-    if (click > 4) {
-        if (gameArena[0][0] == "O" && gameArena[0][1] == "O" && gameArena[0][2] == "O" ||
-            gameArena[1][0] == "O" && gameArena[1][1] == "O" && gameArena[1][2] == "O" ||
-            gameArena[2][0] == "O" && gameArena[2][1] == "O" && gameArena[2][2] == "O" ||
-            gameArena[0][0] == "O" && gameArena[1][0] == "O" && gameArena[2][0] == "O" ||
-            gameArena[0][1] == "O" && gameArena[1][1] == "O" && gameArena[2][1] == "O" ||
-            gameArena[0][2] == "O" && gameArena[1][2] == "O" && gameArena[2][2] == "O" ||
-            gameArena[0][0] == "O" && gameArena[1][1] == "O" && gameArena[2][2] == "O" ||
-            gameArena[0][2] == "O" && gameArena[1][1] == "O" && gameArena[2][0] == "O") {
-            oWins();
-        } else if (gameArena[0][0] == "X" && gameArena[0][1] == "X" && gameArena[0][2] == "X" ||
-            gameArena[1][0] == "X" && gameArena[1][1] == "X" && gameArena[1][2] == "X" ||
-            gameArena[2][0] == "X" && gameArena[2][1] == "X" && gameArena[2][2] == "X" ||
-            gameArena[0][0] == "X" && gameArena[1][0] == "X" && gameArena[2][0] == "X" ||
-            gameArena[0][1] == "X" && gameArena[1][1] == "X" && gameArena[2][1] == "X" ||
-            gameArena[0][2] == "X" && gameArena[1][2] == "X" && gameArena[2][2] == "X" ||
-            gameArena[0][0] == "X" && gameArena[1][1] == "X" && gameArena[2][2] == "X" ||
-            gameArena[0][2] == "X" && gameArena[1][1] == "X" && gameArena[2][0] == "X") {
-            xWins();
-        }
+//cerificação de vitória
+function checkRows() {
+    gameArena[0].forEach(getRowSum);
+    rowSum = 0;
+    gameArena[1].forEach(getRowSum);
+    rowSum = 0;
+    gameArena[2].forEach(getRowSum);
+    rowSum = 0;
+}
+
+function getRowSum(element) {
+    if (element !== false) {
+        rowSum += element;
     }
-}
-function oWins() {
-    oScore++;
-    oScoreDisplay.innerHTML = oScore;
-    winnerSpan.innerHTML = "O";
-    winnerDisplay.setAttribute("hidden", "0");
-}
-function xWins() {
-    xScore++;
-    xScoreDisplay.innerHTML = xScore;
-    winnerSpan.innerHTML = "X";
-    winnerDisplay.setAttribute("hidden", "0");
+
+    if (rowSum === 3) {
+        alert("X wins");
+    } else if (rowSum === 30) {
+        alert("O wins");
+    }    
 }
