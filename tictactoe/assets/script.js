@@ -15,9 +15,6 @@ let gameSquare;
 
 let oScore = 0; //times O has won a match
 let xScore = 0; //times X has won a match
-let rowSum = 0; //sum of rows in gameArena
-let colSum = 0; //sum of columns in gameArena
-let diaSum = 0; //sum of diagonals in gameArena
 
 //sets next player based on click is true or false
 function setNextPlayer() {
@@ -58,24 +55,28 @@ function assignCoordinates(el) {
 function markSquareIfFalse(x, y) {
     if (gameArena[x][y] === false) {
         if (click) {
-            gameArena[x][y] = 1;
             gameSquare.innerHTML = "X";
+            gameArena[x][y] = 1;
         } else {
-            gameArena[x][y] = 10;
             gameSquare.innerHTML = "O";
+            gameArena[x][y] = 10;
         }
         click = !click;
         setNextPlayer();
     }
 }
 
-//cerificação de vitória
+//verifies sum and determines winner accordingly
 function checkSum(sum) {
     if (sum === 3) {
-        alert("X wins");
+        xScore++;
+        freezeGameField();
     } else if (sum === 30) {
-        alert("O wins");
+        oScore++;
+        freezeGameField();
     }
+    oScoreDisplay.innerHTML = oScore;
+    xScoreDisplay.innerHTML = xScore;
 }
 //checks each row sum to declare winner
 function checkRows() {
@@ -133,20 +134,33 @@ function searchWinner() {
         sum = 0;
     }
 }
-
-function getDiaSum() {
+function clearGameField() {
+    let theId;
+    //gameSquare = document.getElementById(theId);
     for (let i = 0; i < gameArena.length; i++) {
-        if (gameArena[i][i] !== false) {
-            diaSum += gameArena[i][i];
+        for (let j = 0; j < gameArena.length; j++) {
+            theId = "" + i + j;
+            gameSquare = document.getElementById(theId);
+            gameSquare.innerHTML = "";
         }
     }
-    checkSum(diaSum);
-    diaSum = 0;
-    if (gameArena[2][0] &&
-        gameArena[1][1] &&
-        gameArena[0][2] !== false) {
-        diaSum = gameArena[2][0] + gameArena[1][1] + gameArena[0][2];
-        checkSum(diaSum);
-        diaSum = 0;
+}
+//sets gameArena to 0 so players can't mark squares anymore
+function freezeGameField() {
+    for (let i = 0; i < gameArena.length; i++) {
+        for (let j = 0; j < gameArena.length; j++) {
+            gameArena[i][j] = 0;
+        }
     }
+}
+//ends a match without reseting players score
+function startNewMatch() {
+    nextPlayer.innerHTML = "O";
+    click = false;
+    for (let i = 0; i < gameArena.length; i++) {
+        for (let j = 0; j < gameArena.length; j++) {
+            gameArena[i][j] = false;
+        }
+    }
+    clearGameField();
 }
