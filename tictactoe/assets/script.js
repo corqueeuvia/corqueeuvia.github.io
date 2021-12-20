@@ -50,8 +50,7 @@ function assignCoordinates(el) {
     } else if (id === 22) {
         markSquareIfFalse(2, 2);
     }
-    checkRows();
-    getColSum();
+    searchWinner();
     console.log(`clique é ${click}`);
     console.log(gameArena);
 }
@@ -78,6 +77,7 @@ function checkSum(sum) {
         alert("O wins");
     }
 }
+//checks each row sum to declare winner
 function checkRows() {
     gameArena[0].forEach(getRowSum);
     rowSum = 0;
@@ -86,22 +86,67 @@ function checkRows() {
     gameArena[2].forEach(getRowSum);
     rowSum = 0;
 }
-
+//gets row sum if squares are marked
 function getRowSum(element) {
     if (element !== false) {
         rowSum += element;
     }
     checkSum(rowSum);
 }
-
-function getColSum() {
+//gets and check columns sum if squares are marked
+function searchWinner() {
+    let sum = 0;
+    //check columns
     for (let i = 0; i < gameArena.length; i++) {
         for (let j = 0; j < gameArena.length; j++) {
             if (gameArena[j][i] !== false) {
-                colSum += gameArena[j][i]
+                sum += gameArena[j][i]
             }
         }
-        checkSum(colSum);
-        colSum = 0;
+        checkSum(sum);
+        sum = 0;
+    }
+    //check rows
+    for (let i = 0; i < gameArena.length; i++) {
+        for (let j = 0; j < gameArena.length; j++) {
+            if (gameArena[i][j] !== false) {
+                sum += gameArena[i][j]
+            }
+        }
+        checkSum(sum);
+        sum = 0;
+    }
+    //check left-to-right diagonal 
+    for (let i = 0; i < gameArena.length; i++) {
+        if (gameArena[i][i] !== false) {
+            sum += gameArena[i][i];
+        }
+    }
+    checkSum(sum);
+    console.log(sum);
+    //check right-to-left diagonal
+    if (gameArena[2][0] &&
+        gameArena[1][1] &&
+        gameArena[0][2] !== false) {
+        sum = gameArena[2][0] + gameArena[1][1] + gameArena[0][2];
+        checkSum(sum);
+        sum = 0;
+    }
+}
+
+function getDiaSum() {
+    for (let i = 0; i < gameArena.length; i++) {
+        if (gameArena[i][i] !== false) {
+            diaSum += gameArena[i][i];
+        }
+    }
+    checkSum(diaSum);
+    diaSum = 0;
+    if (gameArena[2][0] &&
+        gameArena[1][1] &&
+        gameArena[0][2] !== false) {
+        diaSum = gameArena[2][0] + gameArena[1][1] + gameArena[0][2];
+        checkSum(diaSum);
+        diaSum = 0;
     }
 }
