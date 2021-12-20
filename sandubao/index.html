@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Sandubão">
-        <meta property="og:description" content="Monte seu lanche rapidinho!">
-        <meta property="og:type" content="article">
-        <meta property="og:url" content="https://corqueeuvia.github.io/sandubao">
-        <meta property="og:image" content="https://i.ibb.co/VQTNps0/metadata.png">
-        <meta property="og:image:width" content="300">
-        <meta property="og:image:height" content="300">
+    <meta property="og:description" content="Monte seu lanche rapidinho!">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://corqueeuvia.github.io/sandubao">
+    <meta property="og:image" content="https://i.ibb.co/VQTNps0/metadata.png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
     <link href="assets/stylesheet/style.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lakki+Reddy&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lakki+Reddy&family=Shadows+Into+Light+Two&display=swap"
+        rel="stylesheet">
     <title>Sandubão - monte seu lanche</title>
 </head>
+
 <body>
     <header>
         <h1>SANDU<span id="logo-span">BÃO</span></h1>
@@ -25,7 +28,9 @@
     <main>
         <form id="form">
             <ol>
-                <h2><li>Pão</li></h2>
+                <h2>
+                    <li>Pão</li>
+                </h2>
                 <ul>
                     <li>
                         <input type="radio" id="roll-bread" name="bread" value="roll-bread" />
@@ -41,7 +46,9 @@
                     </li>
                 </ul>
 
-                <h2><li>Proteína</li></h2>
+                <h2>
+                    <li>Proteína</li>
+                </h2>
                 <ul>
                     <li>
                         <input type="radio" id="picanha" name="protein" value="picanha" />
@@ -57,7 +64,9 @@
                     </li>
                 </ul>
 
-                <h2><li>Queijo</li></h2>
+                <h2>
+                    <li>Queijo</li>
+                </h2>
                 <ul>
                     <li>
                         <input type="radio" id="mozzarella" name="cheese" value="mozzarella" />
@@ -73,10 +82,12 @@
                     </li>
                 </ul>
 
-                <h2><li>Salada</li></h2>
+                <h2>
+                    <li>Salada</li>
+                </h2>
                 <ul>
                     <li>
-                        <input type="radio" id="lettuce" name="salad" value="lettuce"  />
+                        <input type="radio" id="lettuce" name="salad" value="lettuce" />
                         <label for="lettuce">Alface <span class="price-span">(R$1.50)</span></label>
                     </li>
                     <li>
@@ -87,7 +98,7 @@
                         <input type="radio" id="none" name="salad" value="none" />
                         <label for="none">Sem salada <span class="price-span">(R$0.00)</span></label>
                     </li>
-                </ul>   
+                </ul>
             </ol>
 
             <input type="button" id="order-btn" class="btn" value="Montar pedido" onclick=makeOrderOutput() />
@@ -102,18 +113,19 @@
 
             <div class="order-review">
                 <p id="bread" class="review"></p>
-                <p id="protein" class="review"></p>                
+                <p id="protein" class="review"></p>
                 <p id="cheese" class="review"></p>
                 <p id="salad" class="review"></p>
                 <hr>
             </div>
 
-            <div id="checkout" class=" flex" >
+            <div id="checkout" class=" flex">
                 <span>Total a pagar: </span><span id="final-price" class="review"></span>
             </div>
-            
 
-            <input type="button" id="verified-btn" class="btn" value="Põe na chapa!" onclick="showOrderConfirmation()" />
+
+            <input type="button" id="verified-btn" class="btn" value="Põe na chapa!"
+                onclick="showOrderConfirmation()" />
 
             <div id="order-confirmation" class="ordered">
                 <h2>Tá no fogo!</h2>
@@ -127,4 +139,5 @@
     </main>
     <script src="assets/script/script.js"></script>
 </body>
+
 </html>
