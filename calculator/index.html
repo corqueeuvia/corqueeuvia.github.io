@@ -1,35 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Geek Calculator">
+    <meta property="og:description" content="Awesomely geek interface for a very useless calculator.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://corqueeuvia.github.io/calculator">
+    <meta property="og:image" content="https://i.ibb.co/2KbMn77/meta.png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
     <link href="assets/stylesheet.css" rel="stylesheet" type="text/css">
     <title>calculator</title>
 </head>
+
 <body class="flex">
     <main>
-        
+
         <form class="content flex">
             <div class="left-column">
                 <input type="number" id="x" placeholder="DIGITE X" />
 
                 <input type="number" id="y" placeholder="DIGITE Y" />
-                
+
                 <div class="operators flex">
                     <input type="button" class="small-btn" id="plus" onclick=addNumbers() value="+" />
                     <input type="button" class="small-btn" id="minus" onclick=subtractNumbers() value="-" />
                     <input type="button" class="small-btn" id="times" onclick=multiplyNumbers() value="x" />
                     <input type="button" class="small-btn" id="divided-by" onclick=divideNumbers() value="/" />
-                </div>               
-            </div>            
-    
+                </div>
+            </div>
+
             <div class="right-column">
                 <input type="button" class="large-btn" id="clear" value="&lt;" onclick=clearAll() />
                 <input type="button" class="large-btn" id="equals" onclick=showResult() value="=" />
             </div>
         </form>
-        
+
         <div class="result">
             <p id="operation-display">A W E S O M E</p>
             <p id="result-display">geek calculator</p>
@@ -38,6 +47,7 @@
     </main>
 
     <script src="assets/script.js"></script>
-    
+
 </body>
+
 </html>
