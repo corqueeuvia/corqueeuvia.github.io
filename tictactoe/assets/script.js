@@ -164,3 +164,11 @@ function startNewMatch() {
     }
     clearGameField();
 }
+function reset() {
+    oScore = 0;
+    xScore = 0;
+    oScoreDisplay.innerHTML = oScore;
+    xScoreDisplay.innerHTML = xScore;
+    clearGameField();
+    startNewMatch();
+}
