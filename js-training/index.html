@@ -14,9 +14,304 @@
 
 <body>
     <header>
-        <h1>FABIO'S JS TRAINING</h1>
+        <h1>LLC3 JS TRAINING</h1>
     </header>
     <main>
+        <!-- challenge 1009 -->
+        <section class="challenge-box" id="chall-1009">
+
+            <header class="chall-txt">
+                <h2>URI Beecrowd #1009</h2>
+                <h3>Salary with bonus</h3>
+                <p>Know your income based on a fixed salary plus a percentual bonus over your monthly sales.</p>
+            </header>
+
+            <div class="input-fields">
+                <input name="name" type="text" id="employees-name" placeholder="Your name">
+
+                <input name="salary" type="number" id="fixed-salary" placeholder="Fixed salary">
+
+                <input name="bonus" type="number" id="percentual-bonus" placeholder="% bonus">
+
+                <input name="sale" type="number" id="month-sale" placeholder="This month's sale">
+                <input type="button" value="See income!" class="btn" onclick="calculateIncome()">
+
+                <input name="output" type="text" id="total-income" placeholder="Your income will show here">
+            </div>
+        </section>
+
+        <!-- challenge 1010 -->
+        <section class="challenge-box" id="chall-1010">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1010</h2>
+                <h3>Simple calculate</h3>
+                <p>Know how much to pay for 2 products after inserting their code number, amount taken and price per
+                    unit.</p>
+            </section>
+
+            <section class="input-fields">
+                <input class="product-code" type="number" id="product-1-code" placeholder="Code">
+                <input class="product-amount" type="number" id="product-1-amount" placeholder="Amt.">
+                <input class="product-price" type="number" id="product-1-price" placeholder="Price per unit">
+
+                <input class="product-code" type="number" id="product-2-code" placeholder="Code">
+                <input class="product-amount" type="number" id="product-2-amount" placeholder="Amt.">
+                <input class="product-price" type="number" id="product-2-price" placeholder="Price per unit">
+
+                <input type="button" value="Total price" class="btn" id="total-price-btn" onclick="calculateTotalPrice()" />   
+                
+                <input name="total-price" type="text" id="total-price" placeholder="Total to pay will show here">
+            </section>
+        </section>
+
+<!-- challenge 1011 -->
+        <section class="challenge-box" id="chall-1011">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1011</h2>
+                <h3>Sphere</h3>
+                <p>Calculate a sphere's volume given its radius. Assign for pi the value 3.14159.</p>
+            </section>
+            <section class="input-fields">
+                <label>Insert sphere's radius: </label>
+                <input type="number" id="sphere-radius">
+
+                <input type="button" value="Show volume" class="btn" id="calculate-radius" onclick="calculateSphereVolume()" />
+                <input type="text" placeholder="Sphere's volume will show here" id="sphere-volume">
+
+            </section>
+        </section>
+
+        <!-- challenge 1012 -->
+        <section class="challenge-box" id="chall-1012">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1012</h2>
+                <h3>Area</h3>
+                <p>Given the values A, B and C, you'll get:</p>
+                <ol>
+                    <li>the area of the rectangled triangle that has base A and height C;</li>
+                    <li>the area of the radius's circle C. (pi = 3.14159);</li>
+                    <li>the area of the trapezium which has A and B by base, and C by height;</li>
+                    <li>the area of ​​the square that has side B &</li>
+                    <li>the area of the rectangle that has sides A and B.</li>
+                </ol>
+            </section>
+            <section class="input-fields">
+                <label>A = </label>
+                <input type="number" class="abc-input" id="input-a">
+                <label>B = </label>
+                <input type="number" class="abc-input" id="input-b">
+                <label>C = </label>
+                <input type="number" class="abc-input" id="input-c">
+
+                <input type="button" value="3, 2, 1 GO!" class="btn" id="abc-btn" onclick="calculateAllAreas()" />
+
+                <input type="text" placeholder="The rectangled triangle's area will show here" class="abc-output"
+                    id="rect-tri-output">
+                <input type="text" placeholder="The circle's area will show here" class="abc-output" id="circle-output">
+                <input type="text" placeholder="The trapezium's area will show here" class="abc-output"
+                    id="trapezium-output">
+                <input type="text" placeholder="The square's area will show here" class="abc-output" id="square-output">
+                <input type="text" placeholder="The rectangle's area will show here" class="abc-output"
+                    id="rectangle-output">
+            </section>
+        </section>
+
+        <!-- challenge 1013 -->
+        <section class="challenge-box" id="chall-1013">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1013</h2>
+                <h3>The greatest</h3>
+                <p>It calculates the greatest among 3 integer numbers.</p>
+            </section>
+            <section class="input-fields">
+                <label>1st # </label>
+                <input type="number" class="abc-input" id="input-1">
+                <label>2nd # </label>
+                <input type="number" class="abc-input" id="input-2">
+                <label>3rd # </label>
+                <input type="number" class="abc-input" id="input-3">
+
+                <input type="button" value="Show the greatest" class="btn" id="" onclick="showGreatest()" />
+
+                <input id="greatestOutput" placeholder="Only the greatest shall appear!">
+            </section>
+        </section>
+
+        <!-- challenge 1014 -->
+        <section class="challenge-box" id="chall-1014">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1014</h2>
+                <h3>Consumption</h3>
+                <p>Given a car's trip total distance (in Km) and how much fuel (in L) was needed for it, check said
+                    car's consuption of liters per kilometer.</p>
+            </section>
+            <section class="input-fields">
+                <input type="number" id="km-input"><label>Km</label>
+                <input type="number" id="l-input"><label>L</label>
+
+                <input type="button" value="Show consumption" class="btn" id="" onclick="giveCarConsumption()" />
+
+                <input type="text" id="consumption-output" placeholder="Car consumption will show here">
+
+            </section>
+        </section>
+
+        <!-- challenge 1015 -->
+        <section class="challenge-box" id="chall-1015">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1015</h2>
+                <h3>Distance Between Two Points</h3>
+                <p>Given four values corresponding to the x and y axes of two points in the plane, p1 (x1, y1) and p2
+                    (x2, y2), see the distance between them.</p>
+            </section>
+            <section class="input-fields">
+                <label>Point 1's coordinates:</label>
+                <input type="number" id="x1-input" placeholder="Type the X value here">
+                <input type="number" id="y1-input" placeholder="Type the Y value here">
+
+                <label>Point 2's coordinates:</label>
+                <input type="number" id="x2-input" placeholder="Type the X value here">
+                <input type="number" id="y2-input" placeholder="Type the Y value here">
+
+                <input type="button" value="Calculate distance" class="btn" id="" onclick="calculateDistance()" />
+
+                <input id="distance-output" placeholder="The distance between them will show here">
+
+            </section>
+        </section>
+
+        <!-- challenge 1016 -->
+        <section class="challenge-box" id="chall-1016">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1016</h2>
+                <h3>Distance</h3>
+                <p>A Beetle at 90Km/h is running away from a Camaro after a silly traffic argument. The Camaro can't go
+                    over 60Km/h because it's taking Bingo, the family pet, back from the vet. Give a distance (in Km) to
+                    see how long it takes the Beetle to be that far ahead of the Camaro.</p>
+            </section>
+
+            <section class="input-fields">
+                <input type="number" id="cars-dist-input" placeholder="How far apart do you want them to be?">
+
+                <input type="button" value="Run, Forest, RUN!" class="btn" id="" onclick="calculateTime()" />
+
+                <input type="text" id="cars-dist-output" placeholder="The time needed will show here">
+
+            </section>
+        </section>
+
+        <!-- challenge 1017 -->
+        <section class="challenge-box" id="chall-1017">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1017</h2>
+                <h3>Fuel Spent</h3>
+                <p>Give the trip duration in hours, the average speed in Km/h and see how much fuel a car that runs
+                    12Km/L spent to take such trip.</p>
+            </section>
+            <section class="input-fields">
+                <label>Trip duration (h)</label><input type="number" id="trip-duration">
+                <label>Average speed (Km/h)</label><input type="number" id="average-speed">
+
+                <input type="button" value="See fuel spent" class="btn" id="" onclick="calculateFuelSpent()" />
+
+                <input id="fuelSpent" type="text" placeholder="The fuel spent will show here">
+
+            </section>
+        </section>
+
+        <!-- challenge 1018 -->
+        <section class="challenge-box" id="chall-1018">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1018</h2>
+                <h3>Banknotes</h3>
+                <p>Learn the smallest amount of bank notes possible to sum the inserted value.</p>
+            </section>
+            <section class="input-fields">
+                <label>The sum you want is R$</label>
+                <input type="number" id="amount-wanted">
+                <input type="button" value="CLEAR" class="btn" id="banknote-clear-btn" onclick="clearAmountWanted()" />
+
+                <input type="button" value="Show notes" class="btn" id="" onclick="calculateNoteAmt()" />
+
+                <input type="text" id="output-100">
+                <input type="text" id="output-50">
+                <input type="text" id="output-20">
+                <input type="text" id="output-10">
+                <input type="text" id="output-5">
+                <input type="text" id="output-2">
+                <input type="text" id="output-1">
+                <input type="button" value="CLEAR ALL" class="btn" id="clear-notes-result-btn" onclick="clearNotesResult()" />
+
+            </section>
+        </section>
+
+        <!-- challenge 1019 -->
+        <section class="challenge-box" id="chall-1019">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1019</h2>
+                <h3>Time Conversion</h3>
+                <p>Convert a big number of seconds to hours : minutes : seconds. Hurry, the clock is ticking!</p>
+            </section>
+            <section class="input-fields">
+                <input type="number" id="seconds-input" placeholder="Give me a BIG amount of seconds, baby">
+                <input type="button" value="GO!" class="btn" id="" onclick="convertTime()" />
+                <input type="text" id="final-time" placeholder="When time is right it'll show here">
+            </section>
+        </section>
+
+        <!-- challenge 1020 -->
+        <section class="challenge-box" id="chall-1020">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1020</h2>
+                <h3>Age in Days</h3>
+                <p>Tell me a reeeeeally big amount of days to turn into years, months and days.</p>
+            </section>
+            <section class="input-fields">
+                <input type="number" id="day-amt-input" placeholder="Insert amount of days">
+                <input type="button" value="Convert" class="btn" id="" onclick="convertDays()" />
+                <input type="text" id="day-amt-output" placeholder="Result will show here">
+            </section>
+        </section>
+
+        <!-- challenge 1021 -->
+        <section class="challenge-box" id="chall-1021">
+            <section class="chall-txt">
+                <h2>URI Beecrowd #1021</h2>
+                <h3>Bills and coins</h3>
+                <p>Learn the minimal amount of Brazilian bills and coins you need to get the specified sum. Just type in
+                    a sum!</p>
+            </section>
+            <section class="input-fields">
+                <div id="user-menu">
+                    <label>How much? (R$)</label>
+                    <input type="number" id="bill-coin-amt">
+                    <input type="button" value="CLEAR" class="btn" id="bill-coin-clear-btn" onclick="clearTotalSum()" />
+                    <input type="button" value="GO!" class="btn" id="" onclick="calculateBillCoinAmt()" />
+                </div>
+                <div id="user-output">
+                    <section id="bills-out">
+                        <p>Bills:</p>
+                        <input type="text" id="out-100">
+                        <input type="text" id="out-50">
+                        <input type="text" id="out-20">
+                        <input type="text" id="out-10">
+                        <input type="text" id="out-5">
+                        <input type="text" id="out-2">
+                    </section>
+                    <section id="coins-out">
+                        <p>Coins:</p>
+                        <input type="text" id="out-1">
+                        <input type="text" id="out-050">
+                        <input type="text" id="out-025">
+                        <input type="text" id="out-010">
+                        <input type="text" id="out-05">
+                        <input type="text" id="out-01">
+                    </section>
+                    <input type="button" value="CLEAR ALL" class="btn" id="clear-bill-coin-result-btn" onclick="clearBillCoinResult()" />
+                </div>
+            </section>
+        </section>
+
         <!-- challenge 152 from neps academy -->
         <section class="challenge-box" id="neps-152">
             <header class="chall-txt">
@@ -31,7 +326,8 @@
                 <input type="button" value="Help me count!" class="btn" onclick="showNext(10)">
             </div>
             <span class="display-result" id="display-next-ten"></span>
-            <footer><a href="https://neps.academy/br/exercise/152" target="_blank">See original challenge here (PT-BR)</a></footer>
+            <footer><a href="https://neps.academy/br/exercise/152" target="_blank">See original challenge here
+                    (PT-BR)</a></footer>
         </section>
 
         <!-- challenge 1564 from URI / beecrowd -->
@@ -50,7 +346,8 @@
                 <input type="button" value="Are we hosting it?" class="btn" onclick="checkComplaintsAmount()">
             </div>
             <span class="display-result" id="display-hosting"></span>
-            <footer><a href="https://www.beecrowd.com.br/judge/pt/problems/view/1564?origem=1" target="_blank">See the original challenge here (PT-BR)</a></footer>
+            <footer><a href="https://www.beecrowd.com.br/judge/pt/problems/view/1564?origem=1" target="_blank">See the
+                    original challenge here (PT-BR)</a></footer>
         </section>
 
         <!-- challenge 1059 from URI / beecrowd -->
@@ -64,7 +361,8 @@
                 <input type="button" value="Show 'em now!" class="btn" onclick="getEvenNumbers(100)">
             </div>
             <span class="display-result" id="even-numbers"></span>
-            <footer><a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1059" target="_blank">See original challenge here (PT-BR)</a></footer>
+            <footer><a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1059" target="_blank">See original
+                    challenge here (PT-BR)</a></footer>
         </section>
 
         <!-- challenge 1132 from URI / beecrowd -->
@@ -72,7 +370,8 @@
             <header class="chall-txt">
                 <h2>URI Beecrowd #1132</h2>
                 <h3>13 multiples out!</h3>
-                <p>Given 2 numbers I'll return the sum of every number between them, except for 13 multiples. I.e.: 10 and 14 will return 10 + 11 + 12 + 14 = 47 got it?</p>
+                <p>Given 2 numbers I'll return the sum of every number between them, except for 13 multiples. I.e.: 10
+                    and 14 will return 10 + 11 + 12 + 14 = 47 got it?</p>
             </header>
             <div class="input-fields">
                 <input type="number" step="1" min="0" placeholder="Type a number" id="number-a">
@@ -80,7 +379,8 @@
                 <input type="button" value="Get sum" class="btn" onclick="getRangeAndSumNumbers()">
             </div>
             <span class="display-result" id="display-sum"></span>
-            <footer><a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1132" target="_blank">See original challenge here (PT-BR)</a></footer>
+            <footer><a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1132" target="_blank">See original
+                    challenge here (PT-BR)</a></footer>
         </section>
 
         <!-- challenge 1133 from URI / beecrowd -->
@@ -88,16 +388,19 @@
             <header class="chall-txt">
                 <h2>URI Beecrowd #1133</h2>
                 <h3>The remainder</h3>
-                <p>Type in two numbers to set a range and get all the numbers in this range with a remainder of 2 or 3 when divided by 5. Useless procedure? Probably. But so are nose jobs and people still get them a lot!</p>
+                <p>Type in two numbers to set a range and get all the numbers in this range with a remainder of 2 or 3
+                    when divided by 5. Useless procedure? Probably. But so are nose jobs and people still get them a
+                    lot!</p>
             </header>
             <div class="input-fields">
                 <input type="number" step="1" min="0" placeholder="Type a number" id="number-x">
                 <input type="number" step="1" min="0" placeholder="Type another number" id="number-y">
-                <input type="button" value="I'm convinced" class="btn" onclick="getRangeAndShowNumbers()"> 
+                <input type="button" value="I'm convinced" class="btn" onclick="getRangeAndShowNumbers()">
                 <input type="button" value="↺" class="btn reset" onclick="resetUri1133()">
             </div>
             <span class="display-result" id="display-numbers">(the numbers will show down here)</span>
-            <footer><a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1133" target="_blank">See original challenge here (PT-BR)</a></footer>
+            <footer><a href="https://www.urionlinejudge.com.br/judge/pt/problems/view/1133" target="_blank">See original
+                    challenge here (PT-BR)</a></footer>
         </section>
 
         <!-- challenge 52 from NEPS academy -->
@@ -105,17 +408,22 @@
             <header class="chall-txt">
                 <h2>NEPS Academy #52</h2>
                 <h3>Crazy bulbs #IN PROGRESS#</h3>
-                <p>There are two light bulbs in a room and two switches as well but they seem to be jammed. The ting is that by turning switch 1 the light bulb A changes its status as expected. Yet, by turning switch 2 both bulbs A and B change their statuses! Type in how many times you're turning the switches and then the sequence you're turning them. Let's see how the bulbs end up lightened (or not!).</p>
+                <p>There are two light bulbs in a room and two switches as well but they seem to be jammed. The ting is
+                    that by turning switch 1 the light bulb A changes its status as expected. Yet, by turning switch 2
+                    both bulbs A and B change their statuses! Type in how many times you're turning the switches and
+                    then the sequence you're turning them. Let's see how the bulbs end up lightened (or not!).</p>
             </header>
             <div class="input-fields">
                 <!-- <i class='bx bxs-bulb' style="color:yellow; text-shadow: 0px -2px 10px yellow"></i>
                 <i class='bx bx-bulb' style="color:gold"></i> -->
-                <input type="number" step="1" min="2" max="100000" placeholder="How many times will you switch?" id="light-bulb">
+                <input type="number" step="1" min="2" max="100000" placeholder="How many times will you switch?"
+                    id="light-bulb">
                 <input type="button" value="ok" class="btn" onclick="testOne()" id="light-bulb-btn">
 
             </div>
             <span class="display-result" id=""></span>
-            <footer><a href="https://neps.academy/br/exercise/52" target="_blank">See original challenge here (PT-BR)</a></footer>
+            <footer><a href="https://neps.academy/br/exercise/52" target="_blank">See original challenge here
+                    (PT-BR)</a></footer>
         </section>
 
         <!-- challenge 19 from neps academy -->
@@ -129,11 +437,12 @@
 
             </div>
             <span class="display-result" id=""></span>
-            <footer><a href="https://neps.academy/br/exercise/19" target="_blank">You can get a spoiler here (PT-BR)</a></footer>
+            <footer><a href="https://neps.academy/br/exercise/19" target="_blank">You can get a spoiler here (PT-BR)</a>
+            </footer>
         </section>
 
         <!-- challenge 164 from neps academy -->
-        <section class="challenge-box coming-up" >
+        <section class="challenge-box coming-up">
             <header class="chall-txt">
                 <h2>NEPS Academy #164</h2>
                 <h3>#COMING UP#</h3>
@@ -143,13 +452,14 @@
 
             </div>
             <span class="display-result" id=""></span>
-            <footer><a href=" https://neps.academy/br/exercise/164" target="_blank">You can get a spoiler here (PT-BR)</a></footer>
+            <footer><a href=" https://neps.academy/br/exercise/164" target="_blank">You can get a spoiler here
+                    (PT-BR)</a></footer>
         </section>
 
         <!-- #### BASE STRUCTURE TO COPY AND PASTE
          <section class="challenge-box">
             <header class="chall-txt">
-                <h2>Chall.#</h2>
+                <h2>Chall3.#</h2>
                 <h3>name</h3>
                 <p>description</p>
             </header>
