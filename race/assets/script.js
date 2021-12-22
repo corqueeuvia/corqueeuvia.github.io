@@ -23,13 +23,17 @@ const ednaSpeed = document.getElementById("edna-speed");
 
 const ednaDrift = document.getElementById("edna-drift");
 
+const quickRaceBtn = document.getElementById("quick-race");
+const bigPrizeBtn = document.getElementById("big-prize");
+const enduranceBtn = document.getElementById("endurance");
+
 // declaring objects to store data 
 
-let car0 = { score: 0, };
+let car0 = { wonLaps: 0, score: 0, level: 1, originalMinSpeed: 0, originalMaxSpeed: 0 };
 
-let car1 = { score: 0, };
+let car1 = { wonLaps: 0, score: 0, level: 1, originalMinSpeed: 0, originalMaxSpeed: 0 };
 
-let car2 = { score: 0, };
+let car2 = { wonLaps: 0, score: 0, level: 1, originalMinSpeed: 0, originalMaxSpeed: 0 };
 
 const rank = [car0, car1, car2];
 
@@ -120,8 +124,10 @@ function getSpeedParameters(car) {
         drift = getRandomBetween(superSportCar.drift[0], superSportCar.drift[1]);
     }
     car.minSpeed = min;
+    car.originalMinSpeed = min;
 
     car.maxSpeed = max;
+    car.originalMaxSpeed = max;
 
     car.drift = drift / 10000;
 
@@ -143,6 +149,10 @@ function assignPlayersCars(car, owner) {
 }
 
 function assembleCars() {
+    quickRaceBtn.setAttribute("onclick", "playRace(10)");
+    bigPrizeBtn.setAttribute("onclick", "playRace(70)");
+    enduranceBtn.setAttribute("onclick", "playRace(160)");
+    resetGame();
 
     resetDisplay();
 
@@ -152,25 +162,25 @@ function assembleCars() {
 
     assignPlayersCars(car2, "Edna");
 
-    pedroModel.innerHTML += ` ${car0.model}`;
+    pedroModel.innerHTML = ` ${car0.model} lvl. ${car0.level}`;
 
-    pedroSpeed.innerHTML += ` ${car0.minSpeed} ~ ${car0.maxSpeed} Km/h`;
+    pedroSpeed.innerHTML = ` ${car0.minSpeed} ~ ${car0.maxSpeed} Km/h`;
 
-    pedroDrift.innerHTML += ` ${(car0.drift * 100).toFixed(3)}%`;
+    pedroDrift.innerHTML = ` ${(car0.drift * 100).toFixed(3)}%`;
 
-    jucaModel.innerHTML += ` ${car1.model}`;
+    jucaModel.innerHTML = ` ${car1.model} lvl. ${car1.level}`;
 
-    jucaSpeed.innerHTML += ` ${car1.minSpeed} ~ ${car1.maxSpeed} Km/h`;
+    jucaSpeed.innerHTML = ` ${car1.minSpeed} ~ ${car1.maxSpeed} Km/h`;
 
-    jucaDrift.innerHTML += ` ${(car1.drift * 100).toFixed(3)}%`;
+    jucaDrift.innerHTML = ` ${(car1.drift * 100).toFixed(3)}%`;
 
-    ednaModel.innerHTML += ` ${car2.model}`;
+    ednaModel.innerHTML = ` ${car2.model} lvl. ${car2.level}`;
 
-    ednaSpeed.innerHTML += ` ${car2.minSpeed} ~ ${car2.maxSpeed} Km/h`;
+    ednaSpeed.innerHTML = ` ${car2.minSpeed} ~ ${car2.maxSpeed} Km/h`;
 
-    ednaDrift.innerHTML += ` ${(car2.drift * 100).toFixed(3)}%`;
+    ednaDrift.innerHTML = ` ${(car2.drift * 100).toFixed(3)}%`;
 }
-//retuns an array for the lap classification and scores 1 to the 1st place contestant
+//retuns an array for the lap classification and adds 1 won lap to the 1st place contestant
 function getRankBySpeed() {
 
     let hold = 0;
@@ -189,11 +199,32 @@ function getRankBySpeed() {
             }
         }
     }
-    rank[0].score++;
+    rank[0].wonLaps++;
 
     return rank;
 }
-//order players in rank by their score
+//order players in rank by their number of won laps
+function getRankByWonLaps() {
+
+    let hold = 0;
+
+    for (let i = 0; i < rank.length; i++) {
+
+        for (let j = 0; j < rank.length; j++) {
+
+            if (rank[i].wonLaps > rank[j].wonLaps) {
+
+                hold = rank[i];
+
+                rank[i] = rank[j];
+
+                rank[j] = hold;
+            }
+        }
+    }
+    return rank;
+}
+
 function getRankByScore() {
 
     let hold = 0;
@@ -219,7 +250,7 @@ function playRace(laps) {
 
     console.log(car0, car1, car2);
 
-    resetScore();
+    resetWonLaps();
 
     for (let i = 0; i < laps; i++) {
 
@@ -229,27 +260,29 @@ function playRace(laps) {
         }
         getRankBySpeed();
     }
+    getRankByWonLaps();
+    getScoreByWonLaps(laps);
     getRankByScore();
-
     displayRank();
+    rank.forEach(levelUp);
 }
 
 function displayRank() {
 
-    firstPlaceDisplay.value = `${rank[0].owner} (${rank[0].score} laps)`;
+    firstPlaceDisplay.value = `${rank[0].owner} (${rank[0].score} pts.)`;
 
-    secondPlaceDisplay.value = `${rank[1].owner} (${rank[1].score} laps)`;
+    secondPlaceDisplay.value = `${rank[1].owner} (${rank[1].score} pts.)`;
 
-    thirdPlaceDisplay.value = `${rank[2].owner} (${rank[2].score} laps)`;
+    thirdPlaceDisplay.value = `${rank[2].owner} (${rank[2].score} pts.)`;
 
     return true;
 }
 
-function resetScore() {
-    
+function resetWonLaps() {
+
     for (let i = 0; i < rank.length; i++) {
 
-        rank[i].score = 0;
+        rank[i].wonLaps = 0;
     }
 }
 
@@ -260,25 +293,126 @@ function resetDisplay() {
 
     thirdPlaceDisplay.value = "";
 
-    pedroModel.innerHTML = "<strong>Model:</strong>" ;
+    pedroModel.innerHTML = "<strong>Model:</strong>";
 
-    pedroSpeed.innerHTML = "<strong>Speed:</strong>" ;
+    pedroSpeed.innerHTML = "<strong>Speed:</strong>";
 
-    pedroDrift.innerHTML = "<strong>Drift:</strong>" ;
+    pedroDrift.innerHTML = "<strong>Drift:</strong>";
 
-    jucaModel.innerHTML = "<strong>Model:</strong>" ;
+    jucaModel.innerHTML = "<strong>Model:</strong>";
 
-    jucaSpeed.innerHTML = "<strong>Speed:</strong>" ;
+    jucaSpeed.innerHTML = "<strong>Speed:</strong>";
 
-    jucaDrift.innerHTML = "<strong>Drift:</strong>" ;
+    jucaDrift.innerHTML = "<strong>Drift:</strong>";
 
-    ednaModel.innerHTML = "<strong>Model:</strong>" ;
+    ednaModel.innerHTML = "<strong>Model:</strong>";
 
-    ednaSpeed.innerHTML = "<strong>Speed:</strong>" ;
+    ednaSpeed.innerHTML = "<strong>Speed:</strong>";
 
     ednaDrift.innerHTML = "<strong>Drift:</strong>";
-    
-    resetScore();
+
+    resetWonLaps();
 
     return true;
+}
+
+function levelUp(element) {
+    if (element.score > 0 && element.score < 450) {
+        element.level = 1; 
+    } else if ( element.score < 900) {
+        element.level = 2;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else if (element.score < 1350) {
+        element.level = 3;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else if (element.score < 1800) {
+        element.level = 4;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else if (element.score < 2250) {
+        element.level = 5;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else if (element.score < 2700) {
+        element.level = 6;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else if (element.score < 3150) {
+        element.level = 7;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else if (element.score < 3600) {
+        element.level = 8;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else if (element.score < 4050) {
+        element.level = 9;
+        element.minSpeed = (element.originalMinSpeed * 0.01).toFixed(3);
+        element.maxSpeed = (element.originalMaxSpeed * 0.01).toFixed(3);
+    } else {
+        element.level = 10;
+        let winner = element.owner.toUpperCase();
+        firstPlaceDisplay.value = `☆ ${winner} GR8 WINNER!! ☆ `;
+        secondPlaceDisplay.value = `<assemble new cars>`;
+        thirdPlaceDisplay.value = `<to play new races>`;
+        quickRaceBtn.setAttribute("onclick", "");
+        bigPrizeBtn.setAttribute("onclick", "");
+        enduranceBtn.setAttribute("onclick", "");
+    }
+    refreshPlayersInfo();
+}
+
+function getScoreByWonLaps(laps) {
+    if (laps === 10) {
+        rank[0].score += 200;
+        rank[1].score += 120;
+        rank[2].score += 50;
+    } else if (laps === 70) {
+        rank[0].score += 220;
+        rank[1].score += 130;
+        rank[2].score += 75;
+
+    } else if (laps === 160) {
+        rank[0].score += 250;
+        rank[1].score += 150;
+        rank[2].score += 90;
+
+    }
+    return true;
+}
+
+function refreshPlayersInfo() {
+    pedroModel.innerHTML = ` ${car0.model} lvl. ${car0.level}`;
+
+    pedroSpeed.innerHTML = ` ${car0.minSpeed} ~ ${car0.maxSpeed} Km/h`;
+
+    pedroDrift.innerHTML = ` ${(car0.drift * 100).toFixed(3)}%`;
+
+    jucaModel.innerHTML = ` ${car1.model} lvl. ${car1.level}`;
+
+    jucaSpeed.innerHTML = ` ${car1.minSpeed} ~ ${car1.maxSpeed} Km/h`;
+
+    jucaDrift.innerHTML = ` ${(car1.drift * 100).toFixed(3)}%`;
+
+    ednaModel.innerHTML = ` ${car2.model} lvl. ${car2.level}`;
+
+    ednaSpeed.innerHTML = ` ${car2.minSpeed} ~ ${car2.maxSpeed} Km/h`;
+
+    ednaDrift.innerHTML = ` ${(car2.drift * 100).toFixed(3)}%`;
+}
+function resetCarParameters(el) {
+    //{ wonLaps: 0, score: 0, level: 1, originalMinSpeed: 0, originalMaxSpeed: 0 };
+    el.wonLaps = 0;
+    el.score = 0;
+    el.level = 1;
+    el.originalMinSpeed = 0;
+    el.originalMaxSpeed = 0;
+}
+
+function resetGame() {
+    resetDisplay();
+    rank.forEach(resetCarParameters);
+
 }
