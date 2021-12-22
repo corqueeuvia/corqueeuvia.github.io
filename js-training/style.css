@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Catamaran:wght@400;800&family=Major+Mono+Display&display=swap');
 
+body::-webkit-scrollbar{
+    width: 8px;
+}
+body::-webkit-scrollbar-track{
+    background: #0b131a;
+}
+body::-webkit-scrollbar-thumb{
+    background: #d15401;
+    border-radius: 1px;
+}
+
 body {
     background-color: #0b131a;
     display: flex;
