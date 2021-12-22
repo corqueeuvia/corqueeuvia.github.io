@@ -46,7 +46,7 @@ a:hover {
 }
 
 .challenge-box {
-    width: 600px;
+    width: 45%;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -139,6 +139,170 @@ span {
 footer {
     position: absolute;
     bottom: 10px;
+}
+
+/* SPECIFIC STYLING FOR CHALLENGES 1009 TO 1021 */
+
+/* challenge 1009 */
+#total-income {
+    width: 87%;
+    height: 22pt;
+    text-align: center;
+}
+
+#percentual-bonus {
+    width: 20%;
+}
+
+#month-sale {
+    width: 60%;
+}
+
+/* challenge 1010 */
+
+.product-code, .product-amount {
+    width: 15%;
+}
+
+.product-price {
+    width: 55%;
+}
+
+#total-price, #total-price-btn {
+    width: 93%;
+    text-align: center;
+}
+/* challenge 1011 */
+
+#sphere-volume {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1012 */
+#chall-1012 {
+    height: 970px;
+}
+.abc-input {
+    width: 20%;
+}
+
+.abc-output, #abc-btn {
+    width: 95%;
+    text-align: center;
+}
+
+/* challenge 1013 */
+
+#greatestOutput {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1014 */
+
+#km-input, #l-input {
+    width: 30%;
+}
+
+#consumption-output {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1015 */
+#chall-1015 {
+    height: 650px;
+}
+#chall-1015 > .input-fields > label {
+    width: 90%;
+}
+
+#distance-output {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1016 */
+
+#chall-1016 > .input-fields > input {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1017 */
+
+#fuelSpent {
+    width: 90%;
+    text-align: center;
+}
+
+/* challenge 1018 */
+#chall-1018 {
+    height: 1030px;
+}
+
+#chall-1018 > .input-fields > input {
+    width: 80%;
+    text-align: center;
+}
+#chall-1018 > .input-fields > button {
+    width: 30%;
+}
+
+/* challenge 1019 */
+
+#chall-1019 > .input-fields > input, button {
+    width: 70%;
+    text-align: center;
+}
+
+/* challenge 1020 */
+
+#chall-1020 > .input-fields > input, button {
+    width: 95%;
+    text-align: center;
+}
+
+/* challenge 1021 */
+
+#chall-1021 {
+    width: 45%;
+    height: 870px;
+}
+
+#user-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+#user-menu > button {
+    width: 10%;
+    height: 20px;
+}
+
+#user-output {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
+    padding-bottom: 15px;
+}
+
+#user-output > button {
+    width: 50%;
+}
+
+#bills-out > input, #coins-out > input {
+    width: 88%;
+    margin-bottom: 20px;
+}
+
+#bills-out, #coins-out {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* SIZING EACH CHALLENGE BOX
