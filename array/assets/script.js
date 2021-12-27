@@ -49,7 +49,7 @@ function saveNumbers() {
 function reverseNumbers() {
     if (saved) {
 
-        const counter = (savedNums.length) - 1;
+        let counter = (savedNums.length) - 1;
         const reverseNumbers = [];
         while (counter >= 0) {
             let num = savedNums[counter];
@@ -88,8 +88,9 @@ function sortAscending() {
     } else {
         showError('ASCENDING');
     }
+    return true;
 }
-return true;
+
 
 //generate random numbers for the input fields so user doesn't need to pick any
 function getRandomNumbers() {
