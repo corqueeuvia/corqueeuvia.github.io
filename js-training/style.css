@@ -342,13 +342,20 @@ challenge #1 */
     overflow-x: visible;
 }
 
-/*blablabla*/
+/*neps-52*/
+#neps-52 {
+    height: 800px;
+}
 #neps-52 input {
     width: 300px;
 }
 
 #neps-52 .btn {
     width: auto;
+}
+
+#neps-52 i {
+    font-size: 80px;
 }
 
 /*uri-1132*/
@@ -358,6 +365,10 @@ challenge #1 */
 
 #uri-1132 span {
     text-align: center;
+}
+
+#neps-19 {
+    height: 560px;
 }
 
 /* coming up */

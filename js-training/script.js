@@ -559,19 +559,46 @@ function resetUri1133() {
     y.value = "";
     output.innerHTML = `(the numbers will show down here)`;
 }
-// challenge something something something
-function testOne() {
-    const input = document.getElementById("light-bulb");
-    const button = document.getElementById("light-bulb-btn");  
-    input.setAttribute("placeholder", "Which switch are you turning now?");
-    button.setAttribute("value", "Next");
-    button.setAttribute("onclick", "goBack()");
-    console.log(button);
+// challenge 52 from neps academy
+function turnSwitches() {
+    const data = document.getElementById("light-bulb").value.split(",");  
+    const display = document.getElementById("light-bulb-display");
+    const switchTimes = parseInt(data[0]);
+    let bulb_a = false;
+    let bulb_b = false;
+    
+    for (let i = 1; i <= switchTimes; i++) {
+        let el = parseInt(data[i]);
+        if (switchTimes !== data.length - 1) {
+            display.innerHTML = `ERR: Must switch ${switchTimes} times.`;
+            break;
+        } else if (el === 1) {
+            bulb_a = !bulb_a;
+            showBulbs(bulb_a, bulb_b);
+        } else if (el === 2) {
+            bulb_a = !bulb_a;
+            bulb_b = !bulb_b;
+            showBulbs(bulb_a, bulb_b);
+        } else {
+            display.innerHTML = `ERR: Can't type a number different from 1 or 2 after the first one.`;
+            break;
+        }
+    }
 }
-function goBack() {
-    const input = document.getElementById("light-bulb");
-    const button = document.getElementById("light-bulb-btn");
-    input.setAttribute("placeholder", "How many times will you switch?");
-    button.setAttribute("value", "ok");
-    button.setAttribute("onclick", "testOne()");
+
+function showBulbs(bulb_a, bulb_b) {
+    const display = document.getElementById("light-bulb-display");
+    if (bulb_a === false && bulb_b === false) {
+        display.innerHTML = `<i class='bx bxs-bulb' style="color:rgba(255, 255, 0, 0.5)"></i>`;
+        display.innerHTML += `<i class='bx bxs-bulb' style="color:rgba(255, 255, 0, 0.5)"></i>`;
+    } else if (bulb_a === false && bulb_b === true) {
+        display.innerHTML = `<i class='bx bxs-bulb' style="color:rgba(255, 255, 0, 0.5)"></i>`;
+        display.innerHTML += `<i class='bx bxs-bulb' style="color:yellow; text-shadow: 0px -2px 10px yellow"></i>`;
+    } else if (bulb_a === true && bulb_b === false) {
+        display.innerHTML = `<i class='bx bxs-bulb' style="color:yellow; text-shadow: 0px -2px 10px yellow"></i>`;
+        display.innerHTML += `<i class='bx bxs-bulb' style="color:rgba(255, 255, 0, 0.5)"></i>`;
+    } else if (bulb_a === true && bulb_b === true) {
+        display.innerHTML = `<i class='bx bxs-bulb' style="color:yellow; text-shadow: 0px -2px 10px yellow"></i>`;
+        display.innerHTML += `<i class='bx bxs-bulb' style="color:yellow; text-shadow: 0px -2px 10px yellow"></i>`;
+    }
 }
