@@ -23,7 +23,7 @@ body {
 
 main {
     width: 1300px;
-    height: 8375px;
+    height: 7370px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -381,7 +381,7 @@ challenge #1 */
 
 /* neps 164 */
 #neps-164 {
-    height: 420px;
+    height: 500px;
 }
 
 /* coming up */
