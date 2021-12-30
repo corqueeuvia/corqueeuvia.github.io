@@ -470,17 +470,20 @@
         </section>
 
         <!-- challenge 164 from neps academy -->
-        <section class="challenge-box coming-up">
+        <section class="challenge-box" id="neps-164">
             <header class="chall-txt">
                 <h2>NEPS Academy #164</h2>
-                <h3>#COMING UP#</h3>
-                <p>Your patience is appreciated ♥</p>
+                <h3>Chess board</h3>
+                <p>A chess board's top left square is always white and so is its bottom right one. Considering a chess board with X rows and Y columns, if the top left square is always white, what color should be the last square? </p>
             </header>
             <div class="input-fields">
+                <input type="number" placeholder="rows" step="1" min="1" id="row-input">
+                <input type="number" placeholder="columns" step="1" min="1" id="col-input">
+                <input type="button" value="ok" onclick="getLastSquareColor()" class="btn">
 
             </div>
-            <span class="display-result" id=""></span>
-            <footer><a href=" https://neps.academy/br/exercise/164" target="_blank">You can get a spoiler here
+            <span class="display-result" id="chess-display"></span>
+            <footer><a href="https://neps.academy/br/exercise/164" target="_blank">You can get a spoiler here
                     (PT-BR)</a></footer>
         </section>
 

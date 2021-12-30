@@ -602,3 +602,29 @@ function showBulbs(bulb_a, bulb_b) {
         display.innerHTML += `<i class='bx bxs-bulb' style="color:yellow; text-shadow: 0px -2px 10px yellow"></i>`;
     }
 }
+
+//challenge 164 from neps academy
+function getLastSquareColor() {
+    const row = document.getElementById("row-input").value;
+    const col = document.getElementById("col-input").value;
+    const display = document.getElementById("chess-display");
+    let square = true;
+
+    if (col % 2 === 0) {
+        square = !square;
+        if (row % 2 === 0) {
+            square = !square;
+        }
+    } else if (col % 2 === 1) {
+        if (row % 2 === 0) {
+            square = !square;
+        }
+    }
+
+    if (square === true) {
+        display.innerHTML = `Last square is white`;
+    } else {
+        display.innerHTML = `Last square is black`;
+    }
+    return square;
+}
