@@ -344,7 +344,7 @@ challenge #1 */
 
 /*neps-52*/
 #neps-52 {
-    height: 800px;
+    height: 760px;
 }
 #neps-52 input {
     width: 300px;
@@ -356,6 +356,14 @@ challenge #1 */
 
 #neps-52 i {
     font-size: 80px;
+}
+
+#neps-52 span {
+    display: flex;
+    width: 330px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 /*uri-1132*/
