@@ -1,0 +1,49 @@
+body {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1e1e1e;
+    color: #f6f6f6;
+}
+
+input {
+    height: 30px;
+    background-color: #f6f6f61e;
+    border-radius: 6px;
+    color: #f6f6f6;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn {
+    height: 36px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+#add-btn { width: 50px; 
+    background-color: #c3380d;
+}
+
+#interest-btn {
+    width: 150px; 
+    margin-top: 20px; 
+    background-color: #aa1212;
+}
+
+table, tr, th {
+    border: 1px solid #f6f6f6;
+    border-radius: 6px;
+}
+
+table {
+    background-color: #f6f6f61e;
+    width: 700px;
+    text-align: center;
+    margin-top: 50px;  
+}

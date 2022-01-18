@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/style.css" type="text/css" rel="stylesheet">
+    <title>joana</title>
+</head>
+<body>
+    <h1>lista negra da joana</h1>
+    <form>
+        <input type="text" placeholder="nome" id="name-input" />
+        <input type="date" placeholder="vencimento" id="date-input" />
+        <input type="number" placeholder="valor" id="debt-input" />
+        <input type="button"  value="add" onclick="getNewInfo()" class="btn" id="add-btn" />
+    </form>
+    <table id="display-table">
+    </table>
+    <input type="button" value="calcular juros" onclick="calculateInterest()" class="btn" id="interest-btn" />
+
+    <script src="assets/script.js"></script>
+    
+</body>
+</html>
