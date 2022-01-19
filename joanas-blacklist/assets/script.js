@@ -4,6 +4,7 @@ const dateInput = document.getElementById("date-input");
 const debtInput = document.getElementById("debt-input");
 const table = document.getElementById("display-table");
 const debtList = []; //array of objects to store data
+const clientNameList = [];
 
 function getNewInfo() { //gets info from inputs and stores in debtList array
     const newInfo = {};
@@ -13,20 +14,38 @@ function getNewInfo() { //gets info from inputs and stores in debtList array
     newInfo.debt = debtInput.value;
     debtList.push(newInfo);
 
+    createClientNameList(nameInput.value); //to store a list of unique client names
+
     addInfoToTable();
 
     return true;
 }
 
+function createClientNameList(newName) {
+
+    let duplicate = false;
+
+    for (let i = 0; i < clientNameList.length; i++) {
+
+        if (newName === clientNameList[i]) {
+            duplicate = true;
+            break;
+        }
+    }
+
+    if (!duplicate) {
+        clientNameList.push(newName);
+    }
+
+    return clientNameList;
+}
+
 function addInfoToTable() { //displays clientList data onto the table and clear inputs afterwards
-    table.innerHTML = `        
-        <tr>
-            <th>nome</th>
-            <th>vencimento</th>
-            <th>valor</th>
-            <th>juros</th>
-        </tr>`;
+    
+    clearTable();
+
     debtList.forEach((value, index) => {
+
         table.innerHTML += `
             <tr>
                 <td>${value.name}</td>
@@ -48,9 +67,11 @@ function clearInputs() { //clears input fields
 }
 
 function calculateInterest() { //calculates interest based on days of delay since due date
+
     const currentDate = new Date().getTime();
 
     debtList.map((client, index) => {
+
         let dueDate = new Date(client.date).getTime();
         let clientId = "client-" + (index + 1);
         const displayInterest = document.getElementById(clientId);
@@ -61,11 +82,58 @@ function calculateInterest() { //calculates interest based on days of delay sinc
 
         if (days <= 0) {
             displayInterest.innerHTML = "não aplicável";
+            client.interest = 0;
         } else {
             let interest = 2 + days * 0.1;
 
             displayInterest.innerHTML = interest.toFixed(2) + "%";
+            client.interest = interest.toFixed(2) + "%";
         }
     })
+}
 
+function groupListBy(list, criterion) { //organizes a list by a criterion eg.: organize debtList by name
+    return list.reduce((acc, obj) => {
+        let key = obj[criterion];
+        if (!acc[key]) {
+            acc[key] = [];
+        }
+        acc[key].push(obj);
+        return acc;
+    }, {});
+}
+
+function showDebtByName() {
+    const byName = groupListBy(debtList, "name");
+
+    clearTable();
+
+    //adicionar as infos do obj byName na tabela
+    clientNameList.forEach((el) => {
+        byName[el].forEach((element, index) => {
+            console.log(element.debt)
+            let name = element.name;
+            let date = element.date;
+            let debt = element.debt;
+            let interest = element.interest;
+
+            table.innerHTML += `
+            <tr>
+                <td>${name}</td>
+                <td>${date}</td>
+                <td>${debt}</td>
+                <td id="client-${index + 1}">${interest}</td>
+            </tr>`;
+        })
+    });
+}
+
+function clearTable() {
+    table.innerHTML = `        
+        <tr>
+            <th>nome</th>
+            <th>vencimento</th>
+            <th>valor</th>
+            <th>juros</th>
+        </tr>`;
 }
