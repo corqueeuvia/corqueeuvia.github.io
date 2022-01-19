@@ -9,6 +9,13 @@ body {
     color: #f6f6f6;
 }
 
+.side-by-side {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
 input {
     height: 30px;
     background-color: #f6f6f61e;
@@ -20,19 +27,18 @@ input {
 
 .btn {
     height: 36px;
+    background-color: #c3380d;
 }
 
 .btn:hover {
     cursor: pointer;
 }
 
-#add-btn { width: 50px; 
-    background-color: #c3380d;
+#add-btn { 
+    width: 50px;
 }
 
-#interest-btn {
-    width: 150px; 
-    margin-top: 20px; 
+#interest-btn { 
     background-color: #aa1212;
 }
 
@@ -46,4 +52,8 @@ table {
     width: 700px;
     text-align: center;
     margin-top: 50px;  
+}
+
+.side-by-side input {
+    width: 200px;
 }
