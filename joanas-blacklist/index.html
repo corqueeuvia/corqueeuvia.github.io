@@ -9,17 +9,20 @@
 </head>
 <body>
     <h1>lista negra da joana</h1>
-    <form>
+    <form class="side-by-side">
         <input type="text" placeholder="nome" id="name-input" />
         <input type="date" placeholder="vencimento" id="date-input" />
         <input type="number" placeholder="valor" id="debt-input" />
-        <input type="button"  value="add" onclick="getNewInfo()" class="btn" id="add-btn" />
+        <input type="button" value="add" onclick="getNewInfo()" class="btn" id="add-btn" />
     </form>
     <table id="display-table">
     </table>
-    <input type="button" value="calcular juros" onclick="calculateInterest()" class="btn" id="interest-btn" />
+    <div class="side-by-side">
+        <input type="button" value="calcular juros" onclick="calculateInterest()" class="btn" id="interest-btn" />
+        <input type="button" value="agrupar por nome" onclick="filterByName()" class="btn" id="name-btn" />
+        <input type="button" value="agrupar por data" onclick="filterByDate()" class="btn" id="date-btn" />
+    </div>
 
     <script src="assets/script.js"></script>
-    
 </body>
 </html>
