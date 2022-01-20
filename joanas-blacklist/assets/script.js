@@ -5,6 +5,7 @@ const debtInput = document.getElementById('debt-input');
 const table = document.getElementById('display-table');
 const debtList = []; //array of objects to store data
 const clientNameList = [];
+const clientDateList = [];
 
 function getNewInfo() { //gets info from inputs and stores in debtList array
     const newInfo = {};
@@ -15,6 +16,7 @@ function getNewInfo() { //gets info from inputs and stores in debtList array
     debtList.push(newInfo);
 
     createClientNameList(nameInput.value); //to store a list of unique client names
+    createClientDateList(nameInput.value);
 
     addInfoToTable();
 
@@ -38,6 +40,25 @@ function createClientNameList(newName) {
     }
 
     return clientNameList;
+}
+
+function createClientDateList(newDate) {
+
+    let duplicate = false;
+
+    for (let i = 0; i < clientDateList.length; i++) {
+
+        if (newDate === clientDateList[i]) {
+            duplicate = true;
+            break;
+        }
+    }
+
+    if (!duplicate) {
+        clientDateList.push(newDate);
+    }
+
+    return clientDateList;
 }
 
 function addInfoToTable() { //displays clientList data onto the table and clear inputs afterwards
@@ -124,6 +145,21 @@ function showDebtByName() {
         fillTableRow(byName[el]); //fill a table row from the object array byName
     }); //so all the info is displayed by client name and not by the order user added 
 }
+
+//must figure out a way to convert date to letters so it can be used as a key when sorting
+function showDebtByDate() {
+    console.log(debtList);
+
+    console.log(obj);
+    const byDate = groupListBy(debtList, 'date');
+
+    clearTable();
+
+    clientDateList.forEach((el) => { //for each unique client name on the list it will...
+        fillTableRow(byDate[el]); //fill a table row from the object array byDate
+    }); //so all the info is displayed by due date and not by the order user added 
+}
+
 
 function clearTable() {
     table.innerHTML = `        
