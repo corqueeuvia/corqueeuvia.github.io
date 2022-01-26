@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Maven Pro';
+    src: url(files/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf);
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url(files/fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttfS);
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+}
+
 body {
     margin: 0;
 }
@@ -68,16 +82,12 @@ a:hover {
 .bx-chevrons-down {
     color: white;
     font-size: 45px;
-    opacity: 0.3;
-
-    /* position: absolute;
-    align-self: flex-end; */
-    
+    opacity: 0.3;   
     animation-duration: 2s;
 }
 
 .scroll-link {
-        position: absolute;
+    position: absolute;
     align-self: flex-end;
 }
 
@@ -94,7 +104,7 @@ a:hover {
     justify-content: space-evenly;
     align-content: space-around;
 
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 figure {
@@ -128,6 +138,7 @@ figure {
     font-size: 1.5em;
     font-weight: bold;
     text-align: center;
+    color: #1e1e1e;
 }
 
 .project-description {
@@ -162,7 +173,7 @@ figure {
 }
 
 #about-sub {
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     font-size: 1.5em;
     color: #1e1e1e;
 }
@@ -200,7 +211,7 @@ figure {
 #about-txt {
     width: 60%;
     height: 470px;
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     font-size: 1.5em;
     text-align: justify;
 
