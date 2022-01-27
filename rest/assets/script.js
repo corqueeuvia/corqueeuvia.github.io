@@ -29,7 +29,7 @@ function addNewNum() {
 addBtn.onclick = function () { addNewNum() };
 
 function displayArray(...arr) {
-    displayNums.innerHTML = '';
+    //displayNums.innerHTML = '';
     input.value = '';
     return displayArr.innerHTML = `Final array is: ${arr}.`;
 }
