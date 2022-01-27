@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    font-family:monospace;
+    background-color: rgba(255, 51, 0, 0.89);
+    color: #f6f6f6;
+    justify-content: center;
+}
+
+main {
+    width: 1000px;
+    height: 500px;
+    border-radius: 30px;
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(1, 1, 66);
+    margin-top: 50px;
+}
+
+input {
+    all: unset;
+    background-color: #f6f6f6;
+    width: 420px;
+    height: 50px;
+    margin: 5px;
+    font-size: 22px;
+    line-height: 22px;
+    padding: 5px;
+    text-align: center;
+    opacity: 70%;
+    border-radius: 15px;
+    color: navy;
+}
+
+input:hover {
+    
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(255, 102, 0);
+    font-weight: bold;
+}
