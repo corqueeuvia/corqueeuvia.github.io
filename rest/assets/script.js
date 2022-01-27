@@ -15,7 +15,7 @@ const savedNums = [];
 function addNewNum() {
     let num = input.value;
     if (num === '') {
-        displayArr.innerHTML = 'ERR!'
+        displayArr.innerHTML = 'ERR! Can\'t add empty value to array.'
     } else {
         savedNums.push(num);
         displayNums.innerHTML += ` ${num}...`;
