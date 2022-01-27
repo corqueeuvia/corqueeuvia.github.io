@@ -29,4 +29,9 @@ input {
 
 div { text-align: center;}
 
-p {font-size: 24px;}
+p {
+    width: inherit;
+    font-size: 24px;
+    text-align: center;
+    overflow: auto;
+}
