@@ -12,6 +12,17 @@
     font-variation-settings: 'wght' 300;
 }
 
+body::-webkit-scrollbar{
+    width: 5px;
+}
+body::-webkit-scrollbar-track{
+    background: #1e1e1e;
+}
+body::-webkit-scrollbar-thumb{
+    background: #438A55;
+    border-radius: 5px;
+}
+
 body {
     margin: 0;
 }
@@ -24,7 +35,7 @@ main {
     flex-direction: column;
     align-items: center;
 
-    background-color: #ededf5;
+    background-color: #d8d8df;
 }
 
 #cover {
@@ -93,16 +104,17 @@ a:hover {
 
 #projects {
     width: 90%;
-    height: auto;
+    height: 1000px;
     max-height: 100vh;
     max-width: 100%;
 
-    background-color: #ededf5;
+    background-color: #d8d8df;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-around;
+    padding-bottom: 30px;
 
     font-family: 'Red Hat Display', sans-serif;
 }
@@ -151,7 +163,9 @@ figure {
     height: auto;
     max-height: 100vh;
 
-    background-color: #ededf5;
+    background-color: #1e1e1e;
+    color: #d8d8df;
+    ;
 
     display: flex;
     flex-direction: column;
@@ -168,15 +182,39 @@ figure {
 
 #about-title {
     font-size: 6em;
-    color: #d8d8dfaa;
+    color: #d8d8df11;
     overflow: visible;
 }
 
 #about-sub {
     font-family: 'Red Hat Display', sans-serif;
     font-size: 1.5em;
+    color: #f6f6f6;
+}
+
+
+
+#projects-title, #projects-sub {
+    width: 80%;
+    height: 60px;
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+
+#projects-title {
+    font-size: 6em;
+    color: #1e1e1e11;
+    overflow: visible;
+}
+
+#projects-sub {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.5em;
     color: #1e1e1e;
 }
+
+
 
 #about-content {
     width: 90%;
@@ -188,8 +226,8 @@ figure {
 }
 
 .about-img {
-    width: 350px;
-    height: 470px;
+    width: 276px;
+    height: 370px;
     border-radius: 1em;
     opacity: 0;
     transition-duration: 1.5s;
@@ -201,11 +239,12 @@ figure {
 
 #about-avatar {
     background-image: url(files/avatar.png);
-    width: 350px;
-    height: 470px;
+    width: 276px;
+    height: 370px;
     border-radius: 1em;
     background-repeat: no-repeat;
     background-size: cover; 
+    opacity: 70%;
 }
 
 #about-txt {
@@ -229,26 +268,27 @@ figure {
 }
 
 .skills-bar {
-    width: 500px;
-    height: 20px;
+    width: 720px;
+    height: 25px;
+    border-radius: 5px;
 }
 
 #html {
-    background-image: linear-gradient(90deg, #438A55 75%, #ededf5 25%);
+    background-image: linear-gradient(90deg, #438A55aa 95%, #ededf5aa 5%);
 }
 
 #css {
-    background-image: linear-gradient(90deg, #438A55 65%, #ededf5 35%);    
+    background-image: linear-gradient(90deg, #438A55aa 85%, #ededf5aa 15%);    
 }
 
-#photopea {
-    background-image: linear-gradient(90deg, #438A55 55%, #ededf5 45%);
+#javascript {
+    background-image: linear-gradient(90deg, #438A55aa 70%, #ededf5aa 30%);
 }
 
 #figma {
-    background-image: linear-gradient(90deg, #438A55 67%, #ededf5 33%);  
+    background-image: linear-gradient(90deg, #438A55aa 67%, #ededf5aa 33%);  
 }
 
 #english {
-    background-image: linear-gradient(90deg, #438A55 94%, #ededf5 6%);      
+    background-image: linear-gradient(90deg, #438A55aa 100%, #ededf5aa 0%);      
 }
