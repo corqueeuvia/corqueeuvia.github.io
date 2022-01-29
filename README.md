@@ -3,9 +3,7 @@
 
 [<img src="https://i.ibb.co/kQc8kwT/eu.png" width="35" style="border-radius:50%">](https://corqueeuvia.github.io) [![linkedin: corcoviacaique](https://img.shields.io/badge/-corcoviacaique-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/corcoviacaique/)](https://www.linkedin.com/in/corcoviacaique/)   [![gitHub corqueeuvia](https://img.shields.io/github/followers/corqueeuvia?label=follow&style=social)](https://github.com/corqueeuvia)
 
-# índice geral
-
-*[em progresso]* no repositório de cada projeto você poderá ver como a atividade foi proposta
+*[em breve!]* no repositório de cada projeto haverá o enunciado que deu origem a ele
 ##  1. currículo
 >assunto(s): ```html``` | ```css``` | ```design```
 
