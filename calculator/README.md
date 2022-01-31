@@ -8,4 +8,4 @@
 > * um botão para cada operação: soma, subtração, divisão e multiplicação.
 > * o resultado deve ser exibido em uma tag de texto.
 > 
-[🌎 resultado final](https://corqueeuvia.github.io/PROJETO) | [🧔🏻 meu linkedin](https://www.linkedin.com/in/corcoviacaique/)
+[🌎 resultado final](https://corqueeuvia.github.io/calculator) | [🧔🏻 meu linkedin](https://www.linkedin.com/in/corcoviacaique/)
