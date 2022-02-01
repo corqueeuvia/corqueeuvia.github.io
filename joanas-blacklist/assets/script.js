@@ -16,7 +16,7 @@ function getNewInfo() { //gets info from inputs and stores in debtList array
     debtList.push(newInfo);
 
     createClientNameList(nameInput.value); //to store a list of unique client names
-    createClientDateList(nameInput.value);
+    createClientDateList(dateInput.value); //to store a list of unique dates
 
     addInfoToTable();
 
@@ -143,21 +143,18 @@ function showDebtByName() {
 
     clientNameList.forEach((el) => { //for each unique client name on the list it will...
         fillTableRow(byName[el]); //fill a table row from the object array byName
-    }); //so all the info is displayed by client name and not by the order user added 
+    }); //so all the info is displayed by client name and not by the order user added it
 }
 
 //must figure out a way to convert date to letters so it can be used as a key when sorting
 function showDebtByDate() {
-    console.log(debtList);
-
-    console.log(obj);
     const byDate = groupListBy(debtList, 'date');
 
     clearTable();
 
-    clientDateList.forEach((el) => { //for each unique client name on the list it will...
+    clientDateList.forEach((el) => { //for each unique date on the list it will...
         fillTableRow(byDate[el]); //fill a table row from the object array byDate
-    }); //so all the info is displayed by due date and not by the order user added 
+    }); //so all the info is displayed by due date and not by the order user added it
 }
 
 
