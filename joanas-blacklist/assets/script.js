@@ -24,7 +24,6 @@ function getNewInfo() { //gets info from inputs and stores in debtList array
 }
 
 function createClientNameList(newName) {
-
     let duplicate = false;
 
     for (let i = 0; i < clientNameList.length; i++) {
@@ -43,7 +42,6 @@ function createClientNameList(newName) {
 }
 
 function createClientDateList(newDate) {
-
     let duplicate = false;
 
     for (let i = 0; i < clientDateList.length; i++) {
@@ -62,7 +60,6 @@ function createClientDateList(newDate) {
 }
 
 function addInfoToTable() { //displays clientList data onto the table and clear inputs afterwards
-    
     clearTable();
 
     fillTableRow(debtList); //fill table rows from debtList
@@ -100,11 +97,9 @@ function clearInputs() { //clears input fields
 }
 
 function calculateInterest() { //calculates interest based on days of delay since due date
-
     const currentDate = new Date().getTime();
 
     debtList.map((client, index) => {
-
         let dueDate = new Date(client.date).getTime();
         let clientId = 'client-' + (index + 1);
         const displayInterest = document.getElementById(clientId);
@@ -160,7 +155,6 @@ function showDebtByDate() {
 
     return byDate;
 }
-
 
 function clearTable() {
     table.innerHTML = `        
