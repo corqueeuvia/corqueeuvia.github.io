@@ -9,13 +9,13 @@ header {
     width: auto;
     height: 50px;
     margin: 0;
-    background-color: #1e1e1e;
+    background-color: #1e1e1e48;
     text-align: center;
     line-height: 50px;
-    padding: 15px;
+    padding: 25px;
     border-radius: 50%;
     font-size: 20px;
-    color: #f6f6f6;
+    color: #1e1e1e;
 }
 
 body {
@@ -24,6 +24,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #dddbdb;
 }
 
 main {
@@ -34,11 +35,17 @@ input {
     border-radius: 50%;
     width: 35px;
     height: 35px;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 25px;
+    text-align: center;
 }
 
 input:hover {
     cursor: pointer;
-    opacity: 60%;
+    background-color: #1e1e1e;
+    color: #f6f6f6;
+}
+
+p {
+    font-size: 18pt;
 }
