@@ -144,6 +144,8 @@ function showDebtByName() {
     clientNameList.forEach((el) => { //for each unique client name on the list it will...
         fillTableRow(byName[el]); //fill a table row from the object array byName
     }); //so all the info is displayed by client name and not by the order user added it
+
+    return byName;
 }
 
 //must figure out a way to convert date to letters so it can be used as a key when sorting
@@ -155,6 +157,8 @@ function showDebtByDate() {
     clientDateList.forEach((el) => { //for each unique date on the list it will...
         fillTableRow(byDate[el]); //fill a table row from the object array byDate
     }); //so all the info is displayed by due date and not by the order user added it
+
+    return byDate;
 }
 
 
