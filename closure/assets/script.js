@@ -1,6 +1,6 @@
 function multiplyBy(number) {
     return function multiply(byNumber) {
-        return display.innerHTML = (number * byNumber);
+        return display.innerHTML = `${byNumber} x ${number} = ${(number * byNumber)}`;
     }
 }
 
