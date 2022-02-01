@@ -1,6 +1,16 @@
-# ops
-⚠️ o conteúdo ainda não está pronto... mas estou trabalhando nisso!!
+# matriz
+⚠️ esta página foi desenvolvida para atender à proposta abaixo:
 
-![gif de miley cyrus dando um sorriso desconcertado](https://thumbs.gfycat.com/PolishedJaggedCooter-size_restricted.gif)
+> crie uma página html contando uma historinha infantil à sua escolha. 
+>
+> adicione nesta página um botão para aumentar a fonte do texto e outro botão para diminuir a fonte do texto.
+> 
+> ambos os botões devem funcionar utilizando uma closure.
+>
+> **ATENÇÃO!**
+> * estruture o seu trabalho como um projeto (arquivos separados para html, css e javascript).
+> * publique o material do exercício no seu github (envie o link do repositório).
 
-[🌎 veja este projeto da minha primeira semana no alpha](https://corqueeuvia.github.io/my-website/botao-vermelho.html) | [🧔🏻 ou meu linkedin](https://www.linkedin.com/in/corcoviacaique/)
+> * *obs.: esta foi apenas uma questão da atividade proposta no dia, [veja aqui](https://github.com/corqueeuvia/corqueeuvia.github.io/tree/main/closure) a primeira questão*
+
+[🌎 resultado final](https://corqueeuvia.github.io/historinha) | [🧔🏻 meu linkedin](https://www.linkedin.com/in/corcoviacaique/)
