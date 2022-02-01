@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Maven Pro';
+    src: url(/../files/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf);
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url(/../files/fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+}
+
+body {
+    height: 100%;
+    background-color: rgb(9, 0, 37);
+    display: flex;
+    justify-content: center;
+    font-family: 'Red Hat Display';
+}
+
+h1 {
+    font-family: 'Maven Pro';
+}
+main {
+    background-color: rgba(226, 226, 226, 0.801);
+    width: 600px;
+    height: 400px;
+    border-radius: 15px;
+    margin-top: 100px;
+    padding: 30px;
+    color: rgb(9, 0, 37);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    font-weight: bold;
+    height: 50px;
+    width: 150px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;   
+}
+
+.btn {
+    width: 50px;
+    line-height: 20px;
+    font-size: 20px;
+    background-color: rgb(219, 154, 1);
+
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(9, 0, 37, 0.329);
+}
+
+span {
+    display: block;
+    height: 100px; 
+    text-align: center;
+    font-size: 50px;
+}

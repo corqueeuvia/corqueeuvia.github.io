@@ -12,13 +12,16 @@
 
 <body>
     <header>
-        
+
     </header>
     <main>
-        <input type="number" step="1" min="1" max="1000" id="input">
-        <input type="button" value="x2" onclick="multiply2By(input.value)">
-        <input type="button" value="x5" onclick="multiply5By(input.value)">
-        <input type="button" value="x10" onclick="multiply10By(input.value)">
+        <h1>Multiply any number</h1>
+        <div>
+            <input type="number" step="1" id="input">
+            <input type="button" value="x2" class="btn" onclick="multiply2By(input.value)">
+            <input type="button" value="x5" class="btn" onclick="multiply5By(input.value)">
+            <input type="button" value="x10" class="btn" onclick="multiply10By(input.value)">
+        </div>
         <span id="display"></span>
     </main>
 
