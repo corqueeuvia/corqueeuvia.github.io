@@ -1,3 +1,44 @@
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url(/../files/fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+}
+
+header {
+    width: auto;
+    height: 50px;
+    margin: 0;
+    background-color: #1e1e1e;
+    text-align: center;
+    line-height: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #f6f6f6;
+}
+
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Red Hat Display';
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    width: 1000px;
+}
+
+input {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+input:hover {
+    cursor: pointer;
+    opacity: 60%;
 }
