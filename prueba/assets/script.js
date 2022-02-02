@@ -51,9 +51,11 @@ const moradores = [{
     torre: 2,
     apartamento: 12,
     andar: 1
-    }];
+}];
 
 const table = document.getElementById('display-table');
+
+const presentes = [];
 
 function fillTableRow(list) {
     makeTableHeader();
@@ -62,8 +64,8 @@ function fillTableRow(list) {
         let torre = element.torre;
         let apartamento = element.apartamento;
         let andar = element.andar;
-        let id = `morador${index}`;
-        
+        let id = `${index}`;
+
         element.id = id;
         element.presente = false;
 
@@ -73,15 +75,9 @@ function fillTableRow(list) {
                 <td>${torre}</td>
                 <td>${apartamento}</td>
                 <td>${andar}</td>
-                <td><input type="button" value="presente" id="${id}" onclick="markAsPresent(this)"/></td>
+                <td><input type="button" value="presença" id="${id}" onclick="markAsPresent(this)"/></td>
             </tr>`;
     })
-
-    if (list.length === 0) {
-        return false;
-    } else {
-        return true;
-    }
 }
 
 function makeTableHeader() {
@@ -94,15 +90,34 @@ function makeTableHeader() {
         </tr>`;
 }
 
-function markAsPresent(id) { 
-    //comparar o id com todos da lista
-    //se igual, marcar elemento.presente = true
+function markAsPresent(el) {
+    const btn = document.getElementById(`${el.id}`);
+    return moradores.map((element) => {
+        if (element.id == el.id) {
+            element.presente = !element.presente;
+            if (element.presente === true) {
+                btn.style.backgroundColor = 'lightgreen';
+            } else {
+                btn.style.backgroundColor = 'orangered';
+
+            }
+        }
+    })
 }
 
 function closeList() {
-    //alterar pelo .setAttribute o atributo onclick de todos os botões para vazio, assim não seria mais possível marcar como presente
-    //exibir uma nova tabela com apenas os presentes
-    //poderia pegar uma função limpa tabela que já tenho para limpar a tabela exibida e então gerar uma nova reaproveitando a função usada acima fillTableRow()
+    moradores.filter((el) => {
+        if ((el.presente === true)) {
+            presentes.push(el);
+        };
+    })
+    return fillTableRow(presentes);
 }
 
-fillTableRow(moradores);
+function newMeeting() {
+    presentes.splice(0, presentes.length);
+    moradores.map((element) => {
+        element.presente = false;
+    })
+    return fillTableRow(moradores);
+}
