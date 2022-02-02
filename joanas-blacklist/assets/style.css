@@ -1,19 +1,38 @@
+@font-face {
+    font-family: 'deathnote';
+    src: url(/./files/fonts/deathnote/deathnote-font.ttf);
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url(/../files/fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf);
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+}
+
 body {
     width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Red Hat Display', Arial, Helvetica, sans-serif;
+    font-size: 14pt;
     background-color: #1e1e1e;
     color: #f6f6f6;
 }
 
-.side-by-side {
-    width: 700px;
+h1 {
+    font-family: 'deathnote';
+}
+
+form, div {
+    width: 900px;
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 input {
@@ -23,10 +42,13 @@ input {
     color: #f6f6f6;
     font-weight: bold;
     text-align: center;
+    font-family: 'Red Hat Display', Arial, Helvetica, sans-serif;
+    font-size: 14pt;
 }
 
 .btn {
     height: 36px;
+    width: 280px;
     background-color: #c3380d;
 }
 
@@ -49,11 +71,20 @@ table, tr, th {
 
 table {
     background-color: #f6f6f61e;
-    width: 700px;
+    width: 900px;
     text-align: center;
-    margin-top: 50px;  
+    margin-top: 30px;  
 }
 
-.side-by-side input {
+form input {
+    width: 260px;
+}
+
+#search-input {
+    width: 670px;
+}
+
+#search-btn {
     width: 200px;
+    background-color: rgb(47, 74, 226);
 }
