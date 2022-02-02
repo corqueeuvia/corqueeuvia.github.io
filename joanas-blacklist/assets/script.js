@@ -125,6 +125,12 @@ function fillTableRow(list) {
             <td id='client-${index + 1}'>${interest}</td>
         </tr>`;
     })
+
+    if (list.length === 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 function clearInputs() { //clears input fields
@@ -201,4 +207,27 @@ function clearTable() {
             <th>valor</th>
             <th>juros</th>
         </tr>`;
+}
+
+function search(query) {
+
+    return debtList.filter((el) => {
+        return el.name.toLowerCase().indexOf(query.toLowerCase()) > -1;
+    })
+}
+
+function displaySearchResult() {
+    const query = document.getElementById('search-input').value;
+    clearTable();
+    if (fillTableRow(search(query))) {
+       fillTableRow(search(query));
+    } else {
+        table.innerHTML += `
+        <tr>
+            <td colspan="4" style="text-align:center;">
+                0 resultados encontrados
+            </td>
+        </tr>
+        `;
+    }
 }
