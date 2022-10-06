@@ -171,6 +171,6 @@ uma modesta fabriquinha de arrays que aceita infinitos inputs do usuário. veja 
 desafio proposto como avaliação aplicada pelo zoom, onde recebemos a questão e codamos em tempo-real
 
 * prazo: 30min
-* data da entrega: 02.12.2022
+* data da entrega: 02.02.2022
 
 [📁 repositório](https://github.com/corqueeuvia/corqueeuvia.github.io/tree/main/prueba) |  [🌎página](https://corqueeuvia.github.io/prueba)

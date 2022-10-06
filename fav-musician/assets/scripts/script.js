@@ -47,7 +47,7 @@ document.querySelector("#reasons-title").innerHTML = "top 3 favorite songs";
 let makeReasonsSub = document.createElement("p");
 makeReasonsSub.setAttribute("id", "reasons-sub");
 document.querySelector("main").appendChild(makeReasonsSub);
-document.querySelector("#reasons-sub").innerHTML = "it\'s a very hard thing for me deciding wich of his songs I like the best, because he writes lyrics that are mind blowing. sarcastic portraits of society, sassy observations on human behavior, acid comments on the status quo. this and always a playful way of habdling our amazing mother language: the brazilian portuguese.";
+document.querySelector("#reasons-sub").innerHTML = "it\'s a very hard thing for me deciding wich of his songs I like the best, because he writes lyrics that are mind blowing. sarcastic portraits of society, sassy observations on human behavior, acid comments on the status quo. this and always a playful way of handling our amazing mother language: brazilian portuguese.";
 
 let makeUL = document.createElement("ul");
 makeUL.setAttribute("id", "music-refs");
